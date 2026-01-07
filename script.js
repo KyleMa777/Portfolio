@@ -1,81 +1,48 @@
-const cursor = document.getElementById('cursor');
-const hoverTargets = document.querySelectorAll('.hover-target');
+document.addEventListener('DOMContentLoaded', () => {
+    const cursor = document.getElementById('cursor');
+    const hoverTargets = document.querySelectorAll('.hover-target');
 
-document.addEventListener('mousemove', e => {
-    if (!cursor) return;
-    cursor.style.left = e.clientX + 'px';
-    cursor.style.top = e.clientY + 'px';
-});
-
-hoverTargets.forEach(target => {
-    target.addEventListener('mouseenter', () => {
-        if (!cursor) return;
-        cursor.classList.add('hovered');
+    document.addEventListener('mousemove', (e) => {
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top = e.clientY + 'px';
     });
-    target.addEventListener('mouseleave', () => {
-        if (!cursor) return;
-        cursor.classList.remove('hovered');
+
+    hoverTargets.forEach(target => {
+        target.addEventListener('mouseenter', () => {
+            cursor.classList.add('hovered');
+        });
+        target.addEventListener('mouseleave', () => {
+            cursor.classList.remove('hovered');
+        });
     });
-});
 
-const lightbox = document.getElementById('lightbox');
-const lightboxImg = document.getElementById('lightbox-img');
-const images = document.querySelectorAll('img');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const zoomableImages = document.querySelectorAll('.project-image, .phone-frame img');
 
-images.forEach(img => {
-    img.addEventListener('click', () => {
-        if (!lightbox || !lightboxImg) return;
-        lightboxImg.src = img.src;
-        lightbox.classList.add('open');
+    zoomableImages.forEach(img => {
+        img.addEventListener('click', (e) => {
+            e.stopPropagation();
+            lightboxImg.src = img.src;
+            lightboxImg.alt = img.alt;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
     });
-});
 
-if (lightbox) {
-    lightbox.addEventListener('click', e => {
-        if (e.target === lightbox) {
-            lightbox.classList.remove('open');
-        }
-    });
-}
-
-document.addEventListener('keydown', e => {
-    if (e.key === 'Escape' && lightbox && lightbox.classList.contains('open')) {
-        lightbox.classList.remove('open');
+    function closeLightbox() {
+        lightbox.classList.remove('active');
+        setTimeout(() => {
+            lightboxImg.src = '';
+        }, 300);
+        document.body.style.overflow = '';
     }
-});
 
-const revealSelectors = [
-    '.screen-section',
-    '.content-wrapper',
-    '.quote-card',
-    '.persona-card',
-    '.final-solution-grid .solution-item'
-];
-
-const revealElements = [];
-
-revealSelectors.forEach(sel => {
-    document.querySelectorAll(sel).forEach(el => {
-        el.classList.add('reveal');
-        revealElements.push(el);
+    lightbox.addEventListener('click', closeLightbox);
+    
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+            closeLightbox();
+        }
     });
 });
-
-if ('IntersectionObserver' in window) {
-    const observer = new IntersectionObserver(
-        entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target);
-                }
-            });
-        },
-        {
-            threshold: 0.18
-        }
-    );
-    revealElements.forEach(el => observer.observe(el));
-} else {
-    revealElements.forEach(el => el.classList.add('visible'));
-}

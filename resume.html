@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume | Kyle Ma</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="custom-cursor" id="cursor"></div>
+    <div class="noise-overlay"></div>
+
+    <nav>
+        <a href="index.html" class="logo hover-target">Kyle Ma.</a>
+        <div>
+            <a href="index.html#work" class="menu-link hover-target">Work</a>
+            <a href="about.html" class="menu-link hover-target">About</a>
+            <a href="resume.html" class="menu-link hover-target">Resume</a>
+        </div>
+    </nav>
+
+    <div class="case-study-container" style="text-align: center; display: flex; flex-direction: column; justify-content: center; min-height: 80vh;">
+        <span class="breadcrumb">Document</span>
+        <h1 class="project-title" style="margin-left: auto; margin-right: auto;">Downloading Resume...</h1>
+        <p class="summary">
+            Your download should start automatically. If it doesn't, please click the button below.
+        </p>
+        
+        <div class="cta-container">
+            <a href="assets/Yitao Ma.pdf" download="Yitao_Ma_Resume.pdf" class="cta-button hover-target">
+                Download Manually <span class="arrow">↓</span>
+            </a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        window.onload = function() {
+            setTimeout(function() {
+                const link = document.createElement('a');
+                link.href = 'assets/Yitao Ma.pdf';
+                link.download = 'Yitao_Ma_Resume.pdf';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            }, 1000);
+        };
+    </script>
+</body>
+</html>

@@ -1058,3 +1058,156 @@ li {
     display: inline-block;
     margin-left: 6px;
 }
+.project-image {
+    max-width: 100% !important;
+    width: 100%;
+    height: auto;
+    margin: 60px auto;
+    border-radius: 12px;
+    cursor: zoom-in;
+    transition: transform 0.2s ease;
+}
+
+.project-image:hover {
+    transform: scale(1.01);
+}
+
+@media (min-width: 1025px) {
+    .pivot-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 60px !important;
+    }
+
+    .phone-frame {
+        max-width: 100% !important;
+        width: 100%;
+        padding: 30px !important;
+    }
+
+    .phone-frame img {
+        width: 100%;
+        height: auto;
+        cursor: zoom-in;
+        transition: transform 0.2s ease;
+    }
+    
+    .phone-frame img:hover {
+        transform: scale(1.02);
+    }
+}
+
+@media (max-width: 768px) {
+    .phone-frame {
+        padding: 15px !important;
+    }
+}
+
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    cursor: zoom-out;
+}
+
+.lightbox.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#lightbox-img {
+    max-width: 90vw;
+    max-height: 90vh;
+    object-fit: contain;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    transform: scale(0.95);
+    transition: transform 0.3s ease;
+}
+
+.lightbox.active #lightbox-img {
+    transform: scale(1);
+}
+
+.about-page-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 80px;
+    align-items: start;
+    margin-top: 40px;
+}
+
+.about-image-wrapper {
+    position: sticky;
+    top: 140px;
+}
+
+.about-photo {
+    width: 100%;
+    height: auto;
+    border-radius: 24px;
+    box-shadow: 20px 20px 0px rgba(0, 0, 0, 0.05);
+    transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.about-photo:hover {
+    transform: translate(-10px, -10px);
+    box-shadow: 30px 30px 0px rgba(0, 0, 0, 0.08);
+}
+
+.about-text {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    margin-bottom: 24px;
+    font-weight: 300;
+}
+
+.hobby-tags {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.tag {
+    background-color: rgba(0, 0, 0, 0.03);
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-main);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.tag:hover {
+    background-color: var(--text-main);
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+@media (max-width: 1024px) {
+    .about-page-grid {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+    
+    .about-image-side {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .about-image-wrapper {
+        position: relative;
+        top: 0;
+    }
+}

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UofT Booking Redesign | Kyle Ma</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="custom-cursor" id="cursor"></div>
+    <div class="noise-overlay"></div>
+
+    <nav>
+        <a href="index.html" class="logo hover-target">Kyle Ma.</a>
+        <a href="index.html" class="back-link hover-target">← Back to all work</a>
+    </nav>
+
+    <div class="case-study-container">
+        
+        <div class="project-meta-header">
+            <span class="breadcrumb">Product &amp; UX Design · Case Study</span>
+            <h1 class="project-title">UofT Resource Booking: Redesigning for Efficiency</h1>
+            <p class="summary">
+                Transforming a cluttered, manual-search experience into a <em>requirements-based</em> interface that eliminates repetitive actions and significantly reduces cognitive load.
+            </p>
+            
+            <div class="meta-grid">
+                <div class="meta-item">
+                    <span>Role</span>
+                    <strong>UX Research, Interaction Design, Prototyping</strong>
+                </div>
+                <div class="meta-item">
+                    <span>Context</span>
+                    <strong>UofT Course Project (CCT478 UX Studio)</strong>
+                </div>
+                <div class="meta-item">
+                    <span>Timeline</span>
+                    <strong>Winter 2025</strong>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-wrapper">
+            <h2>Overview</h2>
+            <p>
+                The UofT Resource Booking System is a critical tool for thousands of students, yet the legacy interface presents severe usability friction. This project applied <strong>Don Norman’s design principles</strong> and <strong>Nielsen’s usability heuristics</strong> to rebuild the system from the ground up. 
+            </p>
+            <p>
+                By identifying the root causes of user frustration—specifically the high cognitive load required for manual searching—I transitioned the portal from a static grid to an intelligent, recommendation-driven platform.
+            </p>
+        </div>
+
+        <div class="content-wrapper">
+            <h2>The Problem: High Cognitive Load &amp; Friction</h2>
+            <p class="problem-intro">
+                Heuristic evaluations and user testing identified three critical pain points that made the original system "frustrating and inefficient":
+            </p>
+        </div>
+
+        <div class="problem-grid">
+            <div class="problem-card hover-target">
+                <span class="problem-tag">01</span>
+                <h3>Static Table Search</h3>
+                <p>Availability was presented in a static table, forcing users to scan manually for open slots—a tedious process during peak hours.</p>
+            </div>
+            <div class="problem-card hover-target">
+                <span class="problem-tag">02</span>
+                <h3>Navigation &amp; Data Reset</h3>
+                <p>Switching between campus buildings reset the date to the current day, forcing users to repeatedly re-enter search criteria.</p>
+            </div>
+            <div class="problem-card hover-target">
+                <span class="problem-tag">03</span>
+                <h3>Low Discoverability</h3>
+                <p>Key interface elements, such as the booking buttons and area selection tools, were "hard to notice" due to a cluttered layout.</p>
+            </div>
+        </div>
+
+        <div class="content-wrapper">
+             <img src="assets/originalUI.png" class="project-image" alt="Legacy system UI audit">
+        </div>
+
+        <div class="content-wrapper">
+            <h2>The Solution: Needs-First Design</h2>
+            <p>Guided by A/B testing insights, the redesign focuses on three core pillars to simplify the user journey:</p>
+        </div>
+
+        <div class="pivot-grid">
+            <div class="pivot-item">
+                <div class="pivot-number">01</div>
+                <h3>Automated Querying</h3>
+                <p>Allows users to input requirements first, eliminating manual table scanning.</p>
+                <div class="phone-frame">
+                    <img src="assets/Redesign1.png" alt="Automated search">
+                </div>
+            </div>
+
+            <div class="pivot-item">
+                <div class="pivot-number">02</div>
+                <h3>Persistent Filters</h3>
+                <p>Filter-based system that maintains progress, reducing repetitive actions.</p>
+                <div class="phone-frame">
+                    <img src="assets/Redesign2.png" alt="Filters">
+                </div>
+            </div>
+
+            <div class="pivot-item">
+                <div class="pivot-number">03</div>
+                <h3>Waitlist &amp; Notifications</h3>
+                <p>Added a "Notify Me" feature for unavailable slots, with real-time alerts.</p>
+                <div class="phone-frame">
+                    <img src="assets/Redesign3.png" alt="Waitlist">
+                </div>
+            </div>
+        </div>
+
+        <div class="content-wrapper">
+            <h3>Optimized Booking Workflow</h3>
+            <p>
+                The redesigned end-to-end workflow streamlines the user journey from initial search to final confirmation. User testing confirmed that this optimized flow saved users an <strong>average of 53.8 seconds</strong> compared to the original system.
+            </p>
+            <img src="assets/Redesign4.png" class="project-image" alt="Redesigned Booking Workflow">
+        </div>
+
+        <div class="content-wrapper">
+            <h3>Enhanced Visibility &amp; Signifiers</h3>
+            <p>
+                Drawing from Don Norman’s principles, the new design improves the visibility of system status and provides clear signifiers for user actions. The system ensures users always understand the current state of their requests.
+            </p>
+            <img src="assets/Redesign5.png" class="project-image" alt="Enhanced Visibility and Feedback">
+        </div>
+
+        <div class="content-wrapper">
+            <p class="problem-principle">
+                The results from our A/B tests were definitive: <strong>100% of testers preferred the new design</strong>.
+            </p>
+        </div>
+
+        <div class="content-wrapper">
+            <h2>Reflection</h2>
+            <p>
+                This project demonstrated how Design Thinking can simplify complex systems. By focusing on discoverability and mapping, the redesign successfully improved the overall study room booking experience at UTM.
+            </p>
+        </div>
+
+        <div class="footer-nav">
+            <a href="project_snapbuy.html" class="next-project hover-target">
+                <span>Previous Project</span>
+                <strong>SnapBuy ←</strong>
+            </a>
+        </div>
+
+    </div>
+
+    <div class="lightbox" id="lightbox">
+        <img id="lightbox-img" src="" alt="">
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
