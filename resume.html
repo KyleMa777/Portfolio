@@ -8,44 +8,51 @@
 </head>
 <body>
 
-    <div class="custom-cursor" id="cursor"></div>
     <div class="noise-overlay"></div>
 
    <nav>
         <a href="index.html" class="logo hover-target">Kyle Ma</a>
         <div>
-            <a href="#work" class="menu-link hover-target">My Work</a>
+            <a href="index.html#work" class="menu-link hover-target">My Work</a>
             <a href="about.html" class="menu-link hover-target">About Me</a>
-            <a href="resume.html" class="menu-link hover-target">My Resume</a>
+            <a href="resume.html" class="menu-link hover-target" style="color: var(--text-main);">My Resume</a>
+        </div>
+        
+        <div class="scroll-progress-container">
+            <div class="scroll-progress-bar" id="progressBar"></div>
         </div>
     </nav>
 
-    <div class="case-study-container" style="text-align: center; display: flex; flex-direction: column; justify-content: center; min-height: 80vh;">
-        <span class="breadcrumb">Document</span>
-        <h1 class="project-title" style="margin-left: auto; margin-right: auto;">Downloading Resume...</h1>
-        <p class="summary">
-            Your download should start automatically. If it doesn't, please click the button below.
-        </p>
+    <div class="case-study-container" style="max-width: 1000px; padding-top: 140px; padding-bottom: 80px;">
         
-        <div class="cta-container">
-            <a href="assets/Yitao Ma.pdf" download="Yitao_Ma_Resume.pdf" class="cta-button hover-target">
-                Download Manually <span class="arrow">↓</span>
-            </a>
+        <div class="project-meta-header" style="margin-bottom: 40px;">
+            <span class="breadcrumb">Professional Experience</span>
+            <h1 class="project-title" style="margin-bottom: 24px;">My Resume</h1>
+            
+            <div class="cta-container">
+                <a href="assets/Yitao Ma.pdf" download="Kyle_Ma_Resume.pdf" class="cta-button hover-target">
+                    Download PDF <span class="arrow">↓</span>
+                </a>
+            </div>
         </div>
+
+        <div style="width: 100%; height: 85vh; background: #e0e0e0; border-radius: 16px; overflow: hidden; border: 1px solid rgba(0,0,0,0.1); box-shadow: 0 20px 40px rgba(0,0,0,0.05);">
+            <iframe 
+                src="assets/Yitao Ma.pdf#toolbar=0&navpanes=0&scrollbar=0" 
+                type="application/pdf" 
+                width="100%" 
+                height="100%" 
+                style="border: none;">
+                <p style="text-align: center; padding: 20px;">
+                    Your browser usually displays the PDF here, but it's not supported. 
+                    <a href="assets/Yitao Ma.pdf">Click here to view it.</a>
+                </p>
+            </iframe>
+        </div>
+
     </div>
 
     <script src="script.js"></script>
-    <script>
-        window.onload = function() {
-            setTimeout(function() {
-                const link = document.createElement('a');
-                link.href = 'assets/Yitao Ma.pdf';
-                link.download = 'Yitao_Ma_Resume.pdf';
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
-            }, 1000);
-        };
-    </script>
+
 </body>
 </html>
