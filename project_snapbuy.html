@@ -2,7 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#f2f2f7">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>SnapBuy | Kyle Ma</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -15,14 +18,11 @@
         <a href="index.html" class="logo hover-target">Kyle Ma</a>
         <a href="index.html" class="back-link hover-target">← Back to all work</a>
         <div class="scroll-progress-container">
-        <div class="scroll-progress-bar" id="progressBar"></div>
+            <div class="scroll-progress-bar" id="progressBar"></div>
         </div>
     </nav>
 
-    
-
     <div class="case-study-container">
-        
         
         <div class="project-meta-header">
             <span class="breadcrumb">Product &amp; UX Design · Case Study</span>
@@ -47,7 +47,6 @@
                 </div>
             </div>
 
-
             <div class="tldr-card">
                 <div class="tldr-header">
                     <h2 class="at-a-glance-title">In this project, I...</h2>
@@ -61,12 +60,9 @@
                     <li>Strengthened foundational skills in interaction design, usability testing, and iterative refinement</li>
                 </ul>
             </div>
-            
-    
 
         </div>
 
-       
         <div class="screen-section">
             <div class="screen-copy">
                 <h3>Starting from login</h3>
@@ -103,7 +99,6 @@
             </div>
         </div>
 
-        <!-- Overview -->
         <div class="content-wrapper">
             <h2>Overview</h2>
             <p>
@@ -116,185 +111,184 @@
                 iterating based on usability feedback.
             </p>
 
-        <div class="content-wrapper">
-    <div class="content-wrapper">
-    <h2>Problem Statement</h2>
-    <p class="problem-intro">
-        Through analyzing existing online shopping platforms, I identified three recurring issues
-        that consistently disrupt users’ shopping experiences.
-    </p>
-</div>
+            <div class="content-wrapper">
+                <div class="content-wrapper">
+                    <h2>Problem Statement</h2>
+                    <p class="problem-intro">
+                        Through analyzing existing online shopping platforms, I identified three recurring issues
+                        that consistently disrupt users' shopping experiences.
+                    </p>
+                </div>
 
-<div class="problem-grid">
+                <div class="problem-grid">
+                    <div class="problem-card hover-target">
+                        <span class="problem-tag">01</span>
+                        <h3>Overwhelming Advertising</h3>
+                        <p>
+                            Aggressive banners, pop-ups, and promotional layers...
+                        </p>
+                    </div>
+                    <div class="problem-card hover-target">
+                        <span class="problem-tag">02</span>
+                        <h3>Overly Complex Interfaces</h3>
+                        <p>
+                            Dense layouts, excessive features, and unclear hierarchies...
+                        </p>
+                    </div>
+                    <div class="problem-card hover-target">
+                        <span class="problem-tag">03</span>
+                        <h3>Constant Visual Distractions</h3>
+                        <p>
+                            Competing colors, motion effects, and non-essential UI elements...
+                        </p>
+                    </div>
+                </div>
 
-    <div class="problem-card hover-target">
-        <span class="problem-tag">01</span>
-        <h3>Overwhelming Advertising</h3>
-        <p>
-            Aggressive banners, pop-ups, and promotional layers...
-        </p>
-    </div>
+                <p class="problem-principle">
+                    SnapBuy was designed with a single core principle in mind:
+                    <span class="principle-highlight">Ultra minimalism with zero distraction.</span>
+                </p>
 
-    <div class="problem-card hover-target">
-        <span class="problem-tag">02</span>
-        <h3>Overly Complex Interfaces</h3>
-        <p>
-            Dense layouts, excessive features, and unclear hierarchies...
-        </p>
-    </div>
+                <div class="content-wrapper">
+                    <h2>Initial Prototype</h2>
+                    <p>
+                        The initial version of SnapBuy focused on implementing the core purchasing flow: login, browse products, view product details, and checkout. At this stage, I prioritized layout over visual refinement to validate whether the overall journey made sense.
+                    </p>
+                </div>
 
-    <div class="problem-card hover-target">
-        <span class="problem-tag">03</span>
-        <h3>Constant Visual Distractions</h3>
-        <p>
-            Competing colors, motion effects, and non-essential UI elements...
-        </p>
-    </div>
+                <img src="assets/snapbuy_initial_prototype.png"
+                     class="project-image hover-target"
+                     alt="Early SnapBuy prototype showing login, product, checkout and confirmation screens">
 
-</div>
+                <div class="content-wrapper">
+                    <h2>Usability Testing</h2>
+                    <p>
+                        I conducted 5 task-based usability testing with participants. Each person was asked to:
+                    </p>
+                    <ul>
+                        <li>Create an account or log in</li>
+                        <li>Find and select an iPhone product</li>
+                        <li>Complete the checkout with a saved card</li>
+                        <li>Confirm whether their order was successfully placed</li>
+                    </ul>
+                    <br>
+                    <p>Here are two key issues that surfaced:</p>
+                </div>
 
-<p class="problem-principle">
-    SnapBuy was designed with a single core principle in mind:
-    <span class="principle-highlight">Ultra minimalism with zero distraction.</span>
-</p>
+                <div class="testing-insights">
+                    <div class="insight-card">
+                        <h4>Lack of Reviews for Decision-Making</h4>
+                        <p>
+                            In the early prototype, review content was missing, leaving users uncertain when making purchase decisions.
+                        </p>
+                    </div>
+                    <div class="insight-card">
+                        <h4>Unclear Product Information Structure</h4>
+                        <p>
+                            On the product detail page, technical specifications and key parameters were not clearly
+                            categorized. Users frequently asked where to find essential product information such as
+                            features, specifications.
+                        </p>
+                    </div>
+                </div>
 
+                <div class="content-wrapper">
+                    <h2>The Pivot: Iterating Based on Testing</h2>
+                </div>
 
+                <div class="pivot-grid">
+                    <div class="pivot-item">
+                        <div class="pivot-number">01</div>
+                        <h3>Refining Visual Design</h3>
+                        <p>
+                            I refined the overall interface by enriching key visual elements such as spacing,
+                            hierarchy, typography, and imagery, while still maintaining a minimalist style.
+                        </p>
+                        <div class="phone-frame hover-target">
+                            <img src="assets/snapbuy_pivot_visual.png"
+                                 alt="Refined SnapBuy interface with richer visuals while maintaining minimalism">
+                        </div>
+                    </div>
 
+                    <div class="pivot-item">
+                        <div class="pivot-number">02</div>
+                        <h3>Adding Reviews</h3>
+                        <p>
+                            To support user decision-making, I added a review system. This further enhances the app's functionality.
+                        </p>
+                        <div class="phone-frame hover-target">
+                            <img src="assets/snapbuy_pivot_reviews.png"
+                                 alt="SnapBuy review system and user profile page">
+                        </div>
+                    </div>
 
+                    <div class="pivot-item">
+                        <div class="pivot-number">03</div>
+                        <h3>Enhance Information Layout</h3>
+                        <p>
+                            I redesigned the product detail page into a scrollable layout, clearly organizing product information into categories such as price, style, and specifications.
+                        </p>
+                        <div class="phone-frame hover-target">
+                            <img src="assets/snapbuy_pivot_info.png"
+                                 alt="Scrollable product detail view showing categorized product information">
+                        </div>
+                    </div>
+                </div>
 
-        
-        <div class="content-wrapper">
-            <h2>Initial Prototype</h2>
-            <p>
-                The initial version of SnapBuy focused on implementing the core purchasing flow: login, browse products, view product details, and checkout. At this stage, I prioritized layout over visual refinement to validate whether the overall journey made sense.
-            </p>
-        </div>
+                <div class="content-wrapper">
+                    <h3>Interactive Prototype</h3>
+                    <p>Please explore SnapBuy!</p>
+                </div>
 
-    
-        <img src="assets/snapbuy_initial_prototype.png"
-             class="project-image hover-target"
-             alt="Early SnapBuy prototype showing login, product, checkout and confirmation screens">
+                <div class="figma-container hover-target">
+                    <iframe
+                        src="https://embed.figma.com/proto/u2g8lgzoGZZYvuLBPjRWPz/Simple-prototype?page-id=2003%3A702&node-id=2003-703&p=f&viewport=25%2C112%2C0.41&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=2003%3A703&embed-host=share"
+                        allowfullscreen>
+                    </iframe>
+                </div>
 
-        <div class="content-wrapper">
-            <h2>Usability Testing</h2>
-            <p>
-                I conducted 5 task-based usability testing with participants. Each person was asked to:
-            </p>
-            <ul>
-                <li>Create an account or log in</li>
-                <li>Find and select an iPhone product</li>
-                <li>Complete the checkout with a saved card</li>
-                <li>Confirm whether their order was successfully placed</li>
-            </ul>
-            <br>
-            <p>Here are two key issues that surfaced:</p>
-        </div>
+                <div class="content-wrapper">
+                    <h2>Reflection</h2>
+                    <p>
+                        SnapBuy was my first project where I completed the entire design process—from defining the problem and building initial prototypes to conducting usability testing and iterating based on real user feedback. Experiencing this full cycle gave me a deeper understanding of how design decisions evolve over time.
+                    </p>
+                    <p>
+                       The most valuable takeaway for me was learning how to efficiently extract meaningful insights from user testing and translate them into design adjustments. I learned to re-examine initial assumptions, challenge early design directions, and optimize the UX in a more targeted manner.
+                    </p>
+                </div>
 
-        <div class="testing-insights">
+                <div class="footer-nav">
+                    <a href="project_foodiematch.html" class="next-project hover-target">
+                        <span>Previous Project</span>
+                        <strong>← Foodie Match</strong>
+                    </a>
+                    <a href="project_booking.html" class="next-project hover-target">
+                        <span>Next Project</span>
+                        <strong>Booking Portal Redesign →</strong>
+                    </a>
+                </div>
 
-            <div class="insight-card">
-    <h4>Lack of Reviews for Decision-Making</h4>
-    <p>
-        In the early prototype, review content was missing, leaving users uncertain when making purchase decisions.
-    </p>
-</div>
-
-<div class="insight-card">
-    <h4>Unclear Product Information Structure</h4>
-    <p>
-        On the product detail page, technical specifications and key parameters were not clearly
-        categorized. Users frequently asked where to find essential product information such as
-        features, specifications.
-    </p>
-</div>
-
-
-        </div>
-
-        <div class="content-wrapper">
-            <h2>The Pivot: Iterating Based on Testing</h2>
-        </div>
-
-        <div class="pivot-grid">
-
-    <div class="pivot-item">
-        <div class="pivot-number">01</div>
-        <h3>Refining Visual Design</h3>
-        <p>
-            I refined the overall interface by enriching key visual elements such as spacing,
-            hierarchy, typography, and imagery, while still maintaining a minimalist style.
-        </p>
-        <div class="phone-frame hover-target">
-            <img src="assets/snapbuy_pivot_visual.png"
-                 alt="Refined SnapBuy interface with richer visuals while maintaining minimalism">
-        </div>
-    </div>
-
-    <div class="pivot-item">
-        <div class="pivot-number">02</div>
-        <h3>Adding Reviews</h3>
-        <p>
-            To support user decision-making, I added a review system. This further enhances the app's functionality.
-        </p>
-        <div class="phone-frame hover-target">
-            <img src="assets/snapbuy_pivot_reviews.png"
-                 alt="SnapBuy review system and user profile page">
-        </div>
-    </div>
-
-    <div class="pivot-item">
-        <div class="pivot-number">03</div>
-        <h3>Enhance Information Layout</h3>
-        <p>
-            I redesigned the product detail page into a scrollable layout, clearly organizing product information into categories such as price, style, and specifications.
-         </p>
-         
-
-        <div class="phone-frame hover-target">
-            <img src="assets/snapbuy_pivot_info.png"
-                 alt="Scrollable product detail view showing categorized product information">
-        </div>
-    </div>
-
-</div>
-
-       
-        <div class="content-wrapper">
-    <h3>Interactive Prototype</h3>
-    <p>Please explore SnapBuy!</p>
-</div>
-
-<div class="figma-container hover-target">
-    <iframe
-        src="https://embed.figma.com/proto/u2g8lgzoGZZYvuLBPjRWPz/Simple-prototype?page-id=2003%3A702&node-id=2003-703&p=f&viewport=25%2C112%2C0.41&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=2003%3A703&embed-host=share"
-        allowfullscreen>
-    </iframe>
-</div>
-
-
-    
-        <div class="content-wrapper">
-            <h2>Reflection</h2>
-            <p>
-                SnapBuy was my first project where I completed the entire design process—from defining the problem and building initial prototypes to conducting usability testing and iterating based on real user feedback. Experiencing this full cycle gave me a deeper understanding of how design decisions evolve over time.
-            </p>
-            <p>
-               The most valuable takeaway for me was learning how to efficiently extract meaningful insights from user testing and translate them into design adjustments. I learned to re-examine initial assumptions, challenge early design directions, and optimize the UX in a more targeted manner.
-            </p>
-        </div>
-
-        <div class="footer-nav">
-            <a href="project_foodiematch.html" class="next-project hover-target">
-                <span>Previous Project</span>
-                <strong>← Foodie Match</strong>
-            </a>
-            <a href="project_booking.html" class="next-project hover-target">
-                <span>Next Project</span>
-                <strong>Booking Portal Redesign →</strong>
-            </a>
+            </div>
         </div>
 
     </div>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-left">
+                <div class="footer-name">Kyle Ma</div>
+                <p class="footer-tagline">Design for clarity. Research for truth. Build for people.</p>
+            </div>
+            <div class="footer-links">
+                <a href="index.html#work" class="hover-target">Work</a>
+                <a href="about.html" class="hover-target">About</a>
+                <a href="resume.html" class="hover-target">Resume</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2025 Kyle Ma.
+        </div>
+    </footer>
 
     <div class="lightbox" id="lightbox">
         <img id="lightbox-img" alt="">

@@ -2,7 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#f2f2f7">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>About | Kyle Ma</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -20,44 +23,42 @@
         </div>
         
         <div class="scroll-progress-container">
-        <div class="scroll-progress-bar" id="progressBar"></div>
+            <div class="scroll-progress-bar" id="progressBar"></div>
         </div>
     </nav>
 
     <div class="case-study-container">
         <div class="about-page-grid">
             <div class="about-image-side">
-    <div class="about-image-wrapper">
-        <img src="assets/myphoto.jpg" alt="Kyle Ma" class="about-photo">
-    </div>
+                <div class="about-image-wrapper">
+                    <img src="assets/myphoto.jpg" alt="Kyle Ma" class="about-photo">
+                </div>
 
-    <div class="contact-buttons-container" style="margin-top: 32px; display: flex; flex-direction: column; gap: 16px; align-items: center;">
-        
-        <button id="email-btn" class="cta-button hover-target" onclick="copyEmail()" style="width: 100%; justify-content: center; border: none; font-family: inherit; cursor: pointer;">
-        📬 Say Hello
-        </button>
-        
-        <a href="https://www.linkedin.com/in/kyle-ma-a54522225/" target="_blank" class="cta-button outline hover-target" style="width: 100%; justify-content: center;">
-            💼 LinkedIn
-        </a>
-        
-    </div>
-</div>
+                <div class="contact-buttons-container" style="margin-top: 32px; display: flex; flex-direction: column; gap: 16px; align-items: center;">
+                    <button id="email-btn" class="cta-button hover-target" onclick="copyEmail()" style="width: 100%; justify-content: center; border: none; font-family: inherit; cursor: pointer;">
+                        📬 Say Hello
+                    </button>
+                    <a href="https://www.linkedin.com/in/kyle-ma-a54522225/" target="_blank" class="cta-button outline hover-target" style="width: 100%; justify-content: center;">
+                        💼 LinkedIn
+                    </a>
+                </div>
+            </div>
             
             <div class="about-text-side">
                 <span class="breadcrumb">Nice to meet you</span>
-                <h1 class="project-title" style="text-align: left; margin-left: 0; font-size: 2.5rem; ">Beyond the pixels.</h1>
+                <h1 class="project-title" style="text-align: left; margin-left: 0; font-size: 2.5rem;">Beyond the pixels.</h1>
                 
                 <p class="about-text">
-                    I’m a UX Designer driven by curiosity, both in how digital products work and how the world around us is built. I believe the best designs come from a genuine interest in people and the technology they use every day.
+                    I'm a UX Designer driven by curiosity, both in how digital products work and how the world around us is built. I believe the best designs come from a genuine interest in people and the technology they use every day.
                 </p>
                 
                 <p class="about-text">
-                    When I’m not deep in Figma, I’m usually doing one of four things: capturing the hidden corners of the city through my lens, unboxing the latest tech gadgets (💸), immersing myself in a simulator game, or hitting the gym.
+                    When I'm not deep in Figma, I'm usually doing one of four things: capturing the hidden corners of the city through my lens, unboxing the latest tech gadgets (💸), immersing myself in a simulator game, or hitting the gym.
                 </p>
                 
                 <p class="about-text">
                     Whether it's chasing the perfect shot or exploring a new digital landscape, I stay motivated by the "why" behind every interaction. This curiosity guides my approach to UX: designing with empathy, questioning assumptions, and continuously learning through observation and iteration.
+                </p>
 
                 <div class="hobby-tags">
                     <span class="tag">📷 Shutterbug</span>
@@ -69,10 +70,28 @@
         </div>
     </div>
 
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-left">
+                <div class="footer-name">Kyle Ma</div>
+                <p class="footer-tagline">Design for clarity. Research for truth. Build for people.</p>
+            </div>
+            <div class="footer-links">
+                <a href="index.html#work" class="hover-target">Work</a>
+                <a href="resume.html" class="hover-target">Resume</a>
+                <a href="https://www.linkedin.com/in/kyle-ma-a54522225/" target="_blank" class="hover-target">LinkedIn</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2025 Kyle Ma.
+        </div>
+    </footer>
+
     <div class="lightbox" id="lightbox">
         <img id="lightbox-img" src="" alt="">
     </div>
 
     <script src="script.js"></script>
+
 </body>
 </html>

@@ -2,7 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#f2f2f7">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>UofT Booking Redesign | Kyle Ma</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -13,17 +16,17 @@
 
     <nav>
         <a href="index.html" class="logo hover-target">Kyle Ma</a>
-        <a href="index.html" class="back-link hover-target">← Back to all work</a>
+        <a href="index.html" class="back-link hover-target">&#8592; Back to all work</a>
         
         <div class="scroll-progress-container">
-        <div class="scroll-progress-bar" id="progressBar"></div>
+            <div class="scroll-progress-bar" id="progressBar"></div>
         </div>
     </nav>
 
     <div class="case-study-container">
         
         <div class="project-meta-header">
-            <span class="breadcrumb">Product &amp; UX Design · Case Study</span>
+            <span class="breadcrumb">Product &amp; UX Design &#183; Case Study</span>
             <h1 class="project-title">UofT Resource Booking System Redesign</h1>
             <p class="summary">
                 Transforming a cluttered, overwhelming interface design into an <em>efficient, intuitive, and easy-to-use</em> experience.
@@ -40,7 +43,7 @@
                 </div>
                 <div class="meta-item">
                     <span>Timeline</span>
-                    <strong>4 weeks · 2025</strong>
+                    <strong>4 weeks &#183; 2025</strong>
                 </div>
             </div>
 
@@ -48,7 +51,6 @@
                 <div class="tldr-header">
                     <h2 class="at-a-glance-title">In this project, I...</h2>
                 </div>
-
                 <ul class="tldr-list">
                     <li>Led a team of three to redesign a high-traffic university booking system used by thousands of students</li>
                     <li>Ran heuristic evaluation to identify key usability failures, including high cognitive load and data-reset bugs</li>
@@ -57,13 +59,12 @@
                     <li>Reduced average task completion time by 53.8 seconds, with 100% of testers preferring the redesigned experience</li>
                 </ul>
             </div>
-            
         </div>
 
         <div class="content-wrapper">
             <h2>Overview</h2>
             <p>
-                The UofT Resource Booking System is a critical tool for thousands of students, but its interface design has become outdated and is quite difficult to use. This project applied <strong>Don Norman’s design principles</strong> and <strong>Nielsen’s usability heuristics</strong> to rebuild the system from the ground up. 
+                The UofT Resource Booking System is a critical tool for thousands of students, but its interface design has become outdated and is quite difficult to use. This project applied <strong>Don Norman&#8217;s design principles</strong> and <strong>Nielsen&#8217;s usability heuristics</strong> to rebuild the system from the ground up. 
             </p>
             <p>
                Heuristic analysis allowed me to identify several usability barriers, specifically <strong> the heavy cognitive load of manual searching and selection-reset bugs </strong>. Leading a design team of three, I re-engineered the interface from a static grid into a requirements-driven recommendation system.
@@ -81,7 +82,7 @@
             <div class="problem-card hover-target">
                 <span class="problem-tag">01</span>
                 <h3>Static Table Search</h3>
-                <p>Availability was presented in a static table, forcing users to scan manually for avaliable rooms.</p>
+                <p>Availability was presented in a static table, forcing users to scan manually for available rooms.</p>
             </div>
             <div class="problem-card hover-target">
                 <span class="problem-tag">02</span>
@@ -98,7 +99,6 @@
         <div class="content-wrapper">
              <img src="assets/originalUI.png" class="project-image" alt="Legacy system UI audit">
         </div>
-
 
         <div class="content-wrapper">
             <h2>First version of a mid-fidelity Prototype &amp; A/B testing</h2>
@@ -117,82 +117,72 @@
             </p>
         </div>
 
- <div class="pivot-grid" style="grid-template-columns: repeat(3, 1fr); max-width: 1200px; margin-top: 40px;">
-    
-    <div class="pivot-item">
-        <div class="pivot-number">01</div>
-        <h3>Preference-Led Discovery</h3>
-        <p>A significant majority of testers <strong>(4/5 groups)</strong> found that using the filter-based search was far more intuitive than manually scanning the original static table.</p>
-        <div class="phone-frame hover-target">
-            <img src="assets/filters_piechart.png" alt="Filter preference pie chart">
+        <div class="pivot-grid" style="grid-template-columns: repeat(3, 1fr); max-width: 1200px; margin-top: 40px;">
+            <div class="pivot-item">
+                <div class="pivot-number">01</div>
+                <h3>Preference-Led Discovery</h3>
+                <p>A significant majority of testers <strong>(4/5 groups)</strong> found that using the filter-based search was far more intuitive than manually scanning the original static table.</p>
+                <div class="phone-frame hover-target">
+                    <img src="assets/filters_piechart.png" alt="Filter preference pie chart">
+                </div>
+            </div>
+            <div class="pivot-item">
+                <div class="pivot-number">02</div>
+                <h3>Phrasing Confusion</h3>
+                <p>We introduced a new "Waitlist" feature to manage peak-hour demand; however, the specific button phrasing caused confusion for <strong>3 out of 5</strong> testing groups.</p>
+                <div class="phone-frame hover-target">
+                    <img src="assets/waitlist_ui_test.png" alt="Waitlist notification button UI">
+                </div>
+            </div>
+            <div class="pivot-item">
+                <div class="pivot-number">03</div>
+                <h3>Reduced Task Time</h3>
+                <p>Quantitative data confirmed that the redesigned flow significantly reduced task completion time, saving an average of <strong>53.8 seconds</strong> compared to the legacy system.</p>
+                <div class="phone-frame hover-target">
+                    <img src="assets/ab_test_time.png" alt="A/B test usage time comparison table">
+                </div>
+            </div>
         </div>
-    </div>
-
-    <div class="pivot-item">
-        <div class="pivot-number">02</div>
-        <h3>Phrasing Confusion</h3>
-        <p>We introduced a new "Waitlist" feature to manage peak-hour demand; however, the specific button phrasing caused confusion for <strong>3 out of 5</strong> testing groups.</p>
-        <div class="phone-frame hover-target">
-            <img src="assets/waitlist_ui_test.png" alt="Waitlist notification button UI">
-        </div>
-    </div>
-
-    <div class="pivot-item">
-        <div class="pivot-number">03</div>
-        <h3>Reduced Task Time</h3>
-        <p>Quantitative data confirmed that the redesigned flow significantly reduced task completion time, saving an average of <strong>53.8 seconds</strong> compared to the legacy system.</p>
-        <div class="phone-frame hover-target">
-            <img src="assets/ab_test_time.png" alt="A/B test usage time comparison table">
-        </div>
-    </div>
-
-</div>
-
 
         <div class="content-wrapper">
             <h2>The Final Deliverable</h2>
-            <p>Guided by A/B testing insights, I iterated on the design once more and successfully delivered the definitive version of the UofT Resource Booking System. This versionsignificantly elevates user experience and offers high-value improvements in the following areas: </p>
+            <p>Guided by A/B testing insights, I iterated on the design once more and successfully delivered the definitive version of the UofT Resource Booking System. This version significantly elevates user experience and offers high-value improvements in the following areas: </p>
         </div>
 
         <div class="pivot-grid" style="grid-template-columns: repeat(2, 1fr); gap: 40px; margin-top: 50px;">
-    
-    <div class="pivot-item">
-        <div class="pivot-number">01</div>
-        <h3>Modern Minimalist Aesthetics</h3>
-        <p>Transformed the outdated, cluttered portal into a clean, contemporary interface. The redesign provides more breathing room to users by having more white spaces.</p>
-        <div class="phone-frame hover-target">
-            <img src="assets/Redesign8.png" alt="Enhanced Visibility and breathing room">
+            <div class="pivot-item">
+                <div class="pivot-number">01</div>
+                <h3>Modern Minimalist Aesthetics</h3>
+                <p>Transformed the outdated, cluttered portal into a clean, contemporary interface. The redesign provides more breathing room to users by having more white spaces.</p>
+                <div class="phone-frame hover-target">
+                    <img src="assets/Redesign8.png" alt="Enhanced Visibility and breathing room">
+                </div>
+            </div>
+            <div class="pivot-item">
+                <div class="pivot-number">02</div>
+                <h3>Requirements Based Recommendations</h3>
+                <p>Replaced manual table scanning with smart recommendations. Users can now input their needs, and the system instantly surfaces relevant options, providing an effortless discovery process.</p>
+                <div class="phone-frame hover-target">
+                    <img src="assets/Redesign1.png" alt="Automated requirements-based search">
+                </div>
+            </div>
+            <div class="pivot-item">
+                <div class="pivot-number">03</div>
+                <h3>Enhancing Data Persistence</h3>
+                <p>Resolved the critical data-reset bug by implementing persistent filters. User filter criteria and search progress now persist across different screens, eliminating the need to re-enter data.</p>
+                <div class="phone-frame hover-target">
+                    <img src="assets/Redesign2.png" alt="Persistent filters and seamless navigation">
+                </div>
+            </div>
+            <div class="pivot-item">
+                <div class="pivot-number">04</div>
+                <h3>Optimizing Wordings</h3>
+                <p>Optimized all button labels and interactive feedback to eliminate the phrasing confusion found during A/B testing.</p>
+                <div class="phone-frame hover-target">
+                    <img src="assets/Redesign3.png" alt="Optimized microcopy and waitlist feature">
+                </div>
+            </div>
         </div>
-    </div>
-
-    <div class="pivot-item">
-        <div class="pivot-number">02</div>
-        <h3>Requirements Based Recommdations</h3>
-        <p>Replaced manual table scanning with smart recommendations. Users can now input their needs, and the system instantly surfaces relevant options, providing an effortless discovery process.</p>
-        <div class="phone-frame hover-target">
-            <img src="assets/Redesign1.png" alt="Automated requirements-based search">
-        </div>
-    </div>
-
-    <div class="pivot-item">
-        <div class="pivot-number">03</div>
-        <h3>Enhancing Data Persistence</h3>
-        <p>Resolved the critical data-reset bug by implementing persistent filters. User filter criteria and search progress now persist across different screens, eliminating the need to re-enter data.</p>
-        <div class="phone-frame hover-target">
-            <img src="assets/Redesign2.png" alt="Persistent filters and seamless navigation">
-        </div>
-    </div>
-
-    <div class="pivot-item">
-        <div class="pivot-number">04</div>
-        <h3>Optimizing Wordings</h3>
-        <p>Optimized all button labels and interactive feedback to eliminate the phrasing confusion found during A/B testing.</p>
-        <div class="phone-frame hover-target">
-            <img src="assets/Redesign3.png" alt="Optimized microcopy and waitlist feature">
-        </div>
-    </div>
-
-</div>
 
         <div class="content-wrapper">
             <h3>Optimized Booking Workflow</h3>
@@ -205,7 +195,7 @@
         <div class="content-wrapper">
             <h3>Enhanced Visibility &amp; Signifiers</h3>
             <p>
-                Drawing from Don Norman’s principles, the new design improves the visibility of system status and provides clear signifiers for user actions. The system ensures users always understand the current state of their requests.
+                Drawing from Don Norman&#8217;s principles, the new design improves the visibility of system status and provides clear signifiers for user actions. The system ensures users always understand the current state of their requests.
             </p>
             <img src="assets/Redesign5.png" class="project-image" alt="Enhanced Visibility and Feedback">
         </div>
@@ -216,7 +206,7 @@
             </p>
         </div>
 
-       <div class="content-wrapper">
+        <div class="content-wrapper">
             <h3>Interactive Prototype</h3>
             <p>Explore the redesign below. :)</p>
         </div>
@@ -234,23 +224,39 @@
                  One of my most important takeaway from this project is came from the continuous testing and iterative cycles, where I learned how to ground design decisions in empirical user data.
             </p>
             <p>
-                Another key takeaway from this experience was the value of uncovering unexpected insights through A/B testing and qualitative interviews. While my initial focus was on optimizing single-room reservations, user feedback revealed a critical need to support more complex, real-world scenarios—specifically, combining bookings across multiple rooms to cover a continuous time slot. This insight reshaped my understanding of efficiency: it is not solely about speed or simplicity, but about flexibility and adaptability in complex real life contexts. As a result, I am now more intentional in evaluating how designs perform in real life scenarios and how well they support users navigating complexity.
+                Another key takeaway from this experience was the value of uncovering unexpected insights through A/B testing and qualitative interviews. While my initial focus was on optimizing single-room reservations, user feedback revealed a critical need to support more complex, real-world scenarios&#8212;specifically, combining bookings across multiple rooms to cover a continuous time slot. This insight reshaped my understanding of efficiency: it is not solely about speed or simplicity, but about flexibility and adaptability in complex real life contexts. As a result, I am now more intentional in evaluating how designs perform in real life scenarios and how well they support users navigating complexity.
             </p>
         </div>
 
         <div class="footer-nav">
             <a href="project_snapbuy.html" class="next-project hover-target">
                 <span>Previous Project</span>
-                <strong>← SnapBuy</strong>
+                <strong>&#8592; SnapBuy</strong>
             </a>
-
             <a href="#####" class="next-project hover-target">
                 <span>Next Project</span>
-                <strong>Coming Soon →</strong>
+                <strong>Coming Soon &#8594;</strong>
             </a>
         </div>
 
     </div>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-left">
+                <div class="footer-name">Kyle Ma</div>
+                <p class="footer-tagline">Design for clarity. Research for truth. Build for people.</p>
+            </div>
+            <div class="footer-links">
+                <a href="index.html#work" class="hover-target">Work</a>
+                <a href="about.html" class="hover-target">About</a>
+                <a href="resume.html" class="hover-target">Resume</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &#169; 2025 Kyle Ma. Built with curiosity.#169; 2025 Kyle Ma.
+        </div>
+    </footer>
 
     <div class="lightbox" id="lightbox">
         <img id="lightbox-img" src="" alt="">

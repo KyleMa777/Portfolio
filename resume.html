@@ -2,7 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#f2f2f7">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>Resume | Kyle Ma</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -10,12 +13,12 @@
 
     <div class="noise-overlay"></div>
 
-   <nav>
+    <nav>
         <a href="index.html" class="logo hover-target">Kyle Ma</a>
         <div>
             <a href="index.html#work" class="menu-link hover-target">My Work</a>
             <a href="about.html" class="menu-link hover-target">About Me</a>
-            <a href="resume.html" class="menu-link hover-target" style="color: var(--text-main);">My Resume</a>
+            <a href="resume.html" class="menu-link hover-target">My Resume</a>
         </div>
         
         <div class="scroll-progress-container">
@@ -36,7 +39,7 @@
             </div>
         </div>
 
-        <div style="width: 100%; height: 85vh; background: #e0e0e0; border-radius: 16px; overflow: hidden; border: 1px solid rgba(0,0,0,0.1); box-shadow: 0 20px 40px rgba(0,0,0,0.05);">
+        <div style="width: 100%; height: 85vh; background: rgba(255,255,255,0.3); border-radius: 20px; overflow: hidden; border: 1px solid rgba(255,255,255,0.55); box-shadow: 0 8px 32px rgba(0,0,0,0.04); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);">
             <iframe 
                 src="assets/Yitao Ma.pdf#toolbar=0&navpanes=0&scrollbar=0" 
                 type="application/pdf" 
@@ -51,6 +54,23 @@
         </div>
 
     </div>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-left">
+                <div class="footer-name">Kyle Ma</div>
+                <p class="footer-tagline">Design for clarity. Research for truth. Build for people.</p>
+            </div>
+            <div class="footer-links">
+                <a href="index.html#work" class="hover-target">Work</a>
+                <a href="about.html" class="hover-target">About</a>
+                <a href="https://www.linkedin.com/in/kyle-ma-a54522225/" target="_blank" class="hover-target">LinkedIn</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2025 Kyle Ma.
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 
