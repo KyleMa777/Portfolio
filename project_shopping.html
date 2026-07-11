@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script>
+        (function(){
+            var d = document.documentElement;
+            var stored = null;
+            try { stored = localStorage.getItem('theme'); } catch (e) {}
+            d.setAttribute('data-theme', stored || d.getAttribute('data-default-theme') || 'light');
+        })();
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#ECEDEF">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "vybtpd5e1t");
+    </script>
+    <title>Understanding Online Shopping Behaviour | Kyle Ma</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="bg-aura" aria-hidden="true"></div>
+    <div class="noise-overlay"></div>
+
+    <nav>
+        <a href="index.html" class="logo hover-target">Kyle Ma</a>
+        <a href="index.html" class="back-link hover-target">← Back to all work</a>
+        <button class="theme-toggle hover-target" id="themeToggle" type="button" aria-label="Toggle light and dark mode">
+            <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+            <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <div class="scroll-progress-container">
+            <div class="scroll-progress-bar" id="progressBar"></div>
+        </div>
+    </nav>
+
+    <div class="case-study-container">
+
+        <div class="project-meta-header">
+            <span class="breadcrumb">Exploratory Research &#183; Semi-Structured Interviews</span>
+            <h1 class="project-title">Understanding Online Shopping Behaviour</h1>
+            <p class="summary">
+                77.6% of e-commerce apparel carts get abandoned, yet plenty of non-essential clothing still gets bought. My team of four ran eight semi-structured interviews to understand that decision from the inside &mdash; I helped design the study and moderated two of the sessions myself, then coded my own transcripts into the group's shared findings.
+            </p>
+
+            <div class="meta-grid">
+                <div class="meta-item">
+                    <span>What this shows</span>
+                    <strong>Screener &amp; interview guide design, solo moderation, thematic coding, codebook development</strong>
+                </div>
+                <div class="meta-item">
+                    <span>Context</span>
+                    <strong>Course Project &#183; Team of 4 &#183; I helped design the study and moderated 2 of the 8 interviews</strong>
+                </div>
+                <div class="meta-item">
+                    <span>Timeline</span>
+                    <strong>4 weeks &#183; 2026</strong>
+                </div>
+            </div>
+
+            <div class="tldr-card">
+                <div class="tldr-header">
+                    <h2 class="at-a-glance-title">In this project, I...</h2>
+                </div>
+                <ul class="tldr-list">
+                    <li>Helped design and revise the screener and semi-structured interview guide, building the original criteria and questions, then sharpening both after instructor feedback</li>
+                    <li>Moderated <strong>2 of the 8</strong> participant interviews solo</li>
+                    <li>Coded all 8 transcripts as a team into a shared codebook of <strong>five themes</strong>, then applied it to my own two transcripts</li>
+                    <li>Practiced neutral moderation and adjusted my probing questions in real time when participants answered ahead of the guide</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- SECTION 1: MY ROLE -->
+        <div class="content-wrapper">
+            <h2>My role on the study</h2>
+            <p>
+                I was involved across the full study, not just the interviews. I helped write the original screener and interview guide, then helped revise both after feedback identified gaps &mdash; narrowing the participant profile to online-only shoppers, replacing abstract percentage questions with item counts, and rewriting several interview questions that were double-barreled or leading. I moderated 2 of the 8 sessions, helped build the shared codebook from all 8 transcripts, and applied it to my own two.
+            </p>
+        </div>
+
+        <!-- SECTION 2: WHY THIS TOPIC -->
+        <div class="content-wrapper">
+            <h2>A gap between browsing and buying</h2>
+            <p>
+                We started from a gap, not a hypothesis. Most consumer research explains need-driven buying &mdash; people buying because something broke or ran out. Online apparel doesn't fit that pattern: the market was worth $883.1 billion in 2025, yet 77.6% of e-commerce apparel carts get abandoned. Somewhere between browsing and buying, people are making a call with no external pressure forcing their hand, and that's the part existing research tends to skip. Picking that as our focus meant trading an easier, more measurable question for one that actually needed interviews, not a survey, to answer.
+            </p>
+        </div>
+
+        <!-- SECTION 3: RESEARCH QUESTIONS -->
+        <div class="content-wrapper">
+            <h2>Three questions to hold onto</h2>
+            <ul>
+                <li><strong>1.</strong> How do people describe the steps they take before shopping for themselves?</li>
+                <li><strong>2.</strong> What factors tend to matter most when deciding whether to buy or not buy clothing?</li>
+                <li><strong>3.</strong> How do people describe hesitation or uncertainty during the process?</li>
+            </ul>
+        </div>
+
+        <!-- SECTION 4: METHODOLOGY REVISION -->
+        <div class="content-wrapper">
+            <h2>Rebuilding the screener after feedback</h2>
+            <p>
+                Our first screener and interview guide had real gaps, and none of them were obvious until we had to defend our own design choices. The participant profile split respondents into online and in-store shoppers, which would have left four interviews per group, too thin from eight total sessions to say anything meaningful. The recall window was six months, long enough to invite vague, reconstructed answers. Several screener questions asked people to estimate percentages of their own shopping behavior, a harder mental task than it sounds.
+            </p>
+            <p>
+                We narrowed the profile to online shoppers only, shortened recall to three months, and swapped percentage estimates for item counts. We also noticed our interview guide barely touched RQ3, hesitation and uncertainty, so we rewrote several questions and added explicit follow-ups like "What would have needed to be different for you to buy something during that time?"
+            </p>
+            <p>
+                The bigger lesson wasn't any single fix, it was realizing how much of a study's outcome gets locked in before a single interview happens. A vague screener question doesn't just produce a weird answer; it quietly narrows what you're able to find later.
+            </p>
+        </div>
+
+        <div class="flow-figure">
+            <!-- Replace with a screenshot of the revision memo's tracked changes on the screener or interview guide -->
+            <img src="assets/shopping_revision_memo.png" alt="Tracked changes on the screener and interview guide showing the before-and-after revisions" class="hover-target">
+            <p class="flow-caption"><strong>Revising after feedback.</strong> Tracked changes on the original screener and interview guide.</p>
+        </div>
+
+        <!-- SECTION 5: INTERVIEW DESIGN -->
+        <div class="content-wrapper">
+            <h2>Structuring the conversation</h2>
+            <p>
+                Each session ran 20&ndash;30 minutes over Teams, opening with easy warm-up questions about daily clothing habits before working up to the harder ask: walking through a purchase made, one that wasn't, and one that got delayed. Sequencing mattered more than I expected going in. Ending on a regretted purchase felt like the natural stopping point on paper, but it left people on a low note. Closing with a favorite purchase instead, right after the regret question, kept the same content and ended the conversation somewhere warmer.
+            </p>
+        </div>
+
+        <!-- SECTION 6: CONDUCTING THE INTERVIEWS -->
+        <div class="content-wrapper">
+            <h2>Two sessions, two very different shoppers</h2>
+            <p>
+                I moderated two of the eight sessions. One participant's story captured how easy it is to lose track of what you already own, she regretted a jacket bought on impulse, then discovered she already had three nearly identical ones in transit. The other leaned entirely on brands he already trusted, and only hesitated the one time he stepped outside that comfort zone chasing a hard-to-find hoodie that turned out to be sold out. Both sessions ran long, mostly because participants kept answering questions I hadn't asked yet, which meant deciding, mid-conversation, whether to skip ahead or keep probing.
+            </p>
+        </div>
+
+        <!-- SECTION 7: SYNTHESIS -->
+        <div class="content-wrapper">
+            <h2>Building the codebook</h2>
+            <p>
+                Building the codebook took longer than actually applying it. We kept going back and forth on where codes like "Already Owned" and "Upgrading" ended, since participants often described both in the same sentence, wanting something new because an old item just felt outdated. Agreeing on clean definitions before touching the transcripts was the part that made the coding hold up later; tagging quotes first and sorting definitions out afterward would have meant redoing half the work once we noticed the overlap. I applied the finished codebook to my two transcripts, going line by line and grouping tagged snippets into patterns we could compare against the rest of the team's.
+            </p>
+        </div>
+
+        <div class="flow-figure">
+            <!-- Replace with a screenshot of the final codebook table (themes, codes, definitions) -->
+            <img src="assets/shopping_codebook.png" alt="Final codebook showing themes, codes, and definitions used to tag the interview transcripts" class="hover-target">
+            <p class="flow-caption"><strong>The shared codebook.</strong> Five themes, roughly 25 codes, agreed on before coding began.</p>
+        </div>
+
+        <div class="flow-figure">
+            <!-- Replace with a screenshot showing a raw quote tagged with its code/theme, e.g. from the Phase 3 coding document -->
+            <img src="assets/shopping_coding_example.png" alt="A raw participant quote tagged with its corresponding code and theme during the coding pass" class="hover-target">
+            <p class="flow-caption"><strong>From quote to code.</strong> Line-by-line tagging on my own two transcripts.</p>
+        </div>
+
+        <!-- SECTION 8: FINDINGS -->
+        <div class="content-wrapper">
+            <h2>What surfaced across eight interviews</h2>
+            <p>
+                <strong>Finding a sale feels like luck.</strong> 5 of 8 participants treated sales as unpredictable windows, delaying purchases and rechecking prices until something dropped. Consistent with loss aversion (Kahneman &amp; Tversky, 1979).
+            </p>
+            <p>
+                <strong>Upgrading what is already owned.</strong> 4 of 8 browsed for near-duplicates of things they already had, sometimes without realizing it until later. A small case of perceived obsolescence (Packard, 1960).
+            </p>
+            <p>
+                <strong>Quality and fit carry both the decision and the doubt.</strong> For 7 of 8, quality and fit were the top factor, and also a stand-in for the risk of buying something they couldn't touch first (Kang et al., 2013).
+            </p>
+            <p>
+                <strong>A wait-and-see strategy for uncertainty.</strong> All 8 participants delayed or revisited a purchase at some point; 5 tied it directly to doubt, testing whether the want would still be there later (Zeelenberg, 1999).
+            </p>
+            <p>
+                <strong>Rationalizing purchases to reduce internal conflict.</strong> Some participants justified purchases after the fact, citing savings, meaning, or someone else's influence. Motivated reasoning (Kunda, 1990) at work.
+            </p>
+        </div>
+
+        <!-- SECTION 9: IMPLICATIONS -->
+        <div class="content-wrapper">
+            <h2>Where this points for design</h2>
+            <p>
+                Online clothing platforms should make an item's real-world fit easier to verify before purchase. A practical opportunity here is showing how a piece looks on people of different sizes and heights, giving shoppers a reference point closer to trying something on, which could reduce the uncertainty that drives so much of the delaying and rationalizing we saw.
+            </p>
+        </div>
+
+        <!-- SECTION 10: IMPACT / REFLECTION -->
+        <div class="content-wrapper">
+            <h2>Impact &amp; what I took away</h2>
+            <p>
+                Moderating taught me more about listening than about asking. Participants routinely answered questions I hadn't gotten to yet, which meant I had to decide, mid-conversation, whether to move on or dig for something new. Sometimes that judgment call didn't pay off, I once pushed forward with a planned question only to get a near-identical answer to one already given, which taught me to check what's already been covered before reaching for the next scripted question.
+            </p>
+            <p>
+                The strongest moment came from following up rather than following the script: asking a participant to directly compare a purchase she regretted with one she didn't make. I stuck to neutral acknowledgements like "Mhm" and "Right" throughout, rather than evaluative language, and let people finish their thoughts before moving on, small habits that made a noticeable difference in how much participants opened up.
+            </p>
+        </div>
+
+        <div class="footer-nav">
+            <a href="index.html#work" class="next-project next-only hover-target">
+                <span>Back to</span>
+                <strong>All Work &rarr;</strong>
+            </a>
+        </div>
+
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-left">
+                <div class="footer-name">Kyle Ma</div>
+                <p class="footer-tagline">UX &amp; Product Designer with a builder's and a business mind.</p>
+            </div>
+            <div class="footer-links">
+                <a href="index.html#work" class="hover-target">Work</a>
+                <a href="about.html" class="hover-target">About</a>
+                <a href="resume.html" class="hover-target">Resume</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2025 Kyle Ma.
+        </div>
+    </footer>
+
+    <div class="lightbox" id="lightbox">
+        <img id="lightbox-img" src="" alt="">
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script>
+        (function(){
+            var d = document.documentElement;
+            var stored = null;
+            try { stored = localStorage.getItem('theme'); } catch (e) {}
+            d.setAttribute('data-theme', stored || d.getAttribute('data-default-theme') || 'light');
+        })();
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#ECEDEF">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "vybtpd5e1t");
+    </script>
+    <title>About | Kyle Ma</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="noise-overlay"></div>
+
+    <nav class="nav-menu">
+        <a href="index.html" class="logo hover-target">Kyle Ma</a>
+        <div class="menu-pill" role="navigation" aria-label="Site navigation">
+            <a href="index.html" class="menu-pill-link hover-target">Home</a>
+            <a href="about.html" class="menu-pill-link hover-target">My Bio</a>
+            <a href="resume.html" class="menu-pill-link hover-target">My Resume</a>
+        </div>
+        <button class="theme-toggle hover-target" id="themeToggle" type="button" aria-label="Toggle light and dark mode">
+            <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+            <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        
+        <div class="scroll-progress-container">
+            <div class="scroll-progress-bar" id="progressBar"></div>
+        </div>
+    </nav>
+
+    <div class="case-study-container">
+        <div class="about-page-grid">
+            <div class="about-image-side">
+                <div class="about-image-wrapper">
+                    <img src="assets/myphoto.jpg" alt="Kyle Ma" class="about-photo">
+                </div>
+
+                <div class="contact-buttons-container" style="margin-top: 32px; display: flex; flex-direction: column; gap: 16px; align-items: center;">
+                    <button id="email-btn" class="cta-button hover-target" onclick="copyEmail()" style="width: 100%; justify-content: center; border: none; font-family: inherit; cursor: pointer;">
+                        📬 Say Hello
+                    </button>
+                    <a href="https://www.linkedin.com/in/kyle-ma-a54522225/" target="_blank" class="cta-button outline hover-target" style="width: 100%; justify-content: center;">
+                        💼 LinkedIn
+                    </a>
+                </div>
+            </div>
+            
+            <div class="about-text-side">
+                <span class="breadcrumb">Nice to meet you</span>
+                <h1 class="project-title" style="text-align: left; margin-left: 0;">Beyond the pixels.</h1>
+                
+                <p class="about-text">
+                    I didn't start in UX. My foundation is a degree in <strong>Digital Enterprise Management</strong> &mdash;
+                    where I learned to read a product through a business lens &mdash; and several years of
+                    <strong>freelance web design and development</strong>, building and shipping live sites for 10+ clients
+                    in HTML/CSS, React, Webflow, and WordPress.
+                </p>
+
+                <p class="about-text">
+                    That path is exactly why I think I make a stronger product designer. I can tie a design decision back to a
+                    <strong>business goal</strong>, and I can <strong>build the thing in the browser</strong> instead of handing off
+                    a static mockup. <em>(This whole portfolio is hand-coded by me, no page builder.)</em> When I talk to engineers
+                    or stakeholders, I'm fluent in both rooms.
+                </p>
+
+                <p class="about-text">
+                    Now, as a Master of Information student at the University of Toronto, I'm pairing that practical background
+                    with deeper research craft &mdash; interviews, usability testing, and design systems &mdash; to design products
+                    that are intuitive, defensible, and grounded in how people actually behave.
+                </p>
+
+                <p class="about-text">
+                    When I'm not deep in Figma or a code editor, I'm usually capturing the hidden corners of the city through my lens,
+                    unboxing the latest tech gadgets (&#128184;), losing hours in a simulator game, or at the gym.
+                </p>
+
+                <div class="hobby-tags">
+                    <span class="tag">📷 Shutterbug</span>
+                    <span class="tag">📱 Tech Junkie</span>
+                    <span class="tag">🎮 Simulation Nerd</span>
+                    <span class="tag">☕ Coffee Fueled</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-left">
+                <div class="footer-name">Kyle Ma</div>
+                <p class="footer-tagline">UX &amp; Product Designer with a builder's and a business mind.</p>
+            </div>
+            <div class="footer-links">
+                <a href="index.html#work" class="hover-target">Work</a>
+                <a href="resume.html" class="hover-target">Resume</a>
+                <a href="https://www.linkedin.com/in/kyle-ma-a54522225/" target="_blank" class="hover-target">LinkedIn</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2025 Kyle Ma.
+        </div>
+    </footer>
+
+    <div class="lightbox" id="lightbox">
+        <img id="lightbox-img" src="" alt="">
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

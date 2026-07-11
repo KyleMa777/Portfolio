@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script>
+        (function(){
+            var d = document.documentElement;
+            var stored = null;
+            try { stored = localStorage.getItem('theme'); } catch (e) {}
+            d.setAttribute('data-theme', stored || d.getAttribute('data-default-theme') || 'light');
+        })();
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#ECEDEF">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "vybtpd5e1t");
+    </script>
+    <title>Trip.com Usability Study | Kyle Ma</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="bg-aura" aria-hidden="true"></div>
+    <div class="noise-overlay"></div>
+
+    <nav>
+        <a href="index.html" class="logo hover-target">Kyle Ma</a>
+        <a href="index.html" class="back-link hover-target">← Back to all work</a>
+        <button class="theme-toggle hover-target" id="themeToggle" type="button" aria-label="Toggle light and dark mode">
+            <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+            <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <div class="scroll-progress-container">
+            <div class="scroll-progress-bar" id="progressBar"></div>
+        </div>
+    </nav>
+
+    <div class="case-study-container">
+
+        <div class="project-meta-header">
+            <span class="breadcrumb">Team of 5 &#183; UX Research &amp; Usability Testing</span>
+            <h1 class="project-title">Evaluating Trip.com</h1>
+            <p class="summary">
+                Trip.com integrates flights, hotels, and travel add-ons into a single, information-dense interface, and this information architecture can easily lead users to become disoriented. I designed a six-participant usability study to find out exactly where, moderated every session myself, and turned the transcripts into a severity-ranked set of findings that became our team's final evaluation report.
+            </p>
+
+            <div class="meta-grid">
+                <div class="meta-item">
+                    <span>What this shows</span>
+                    <strong>Research protocol design, user testing moderation, thematic analysis and coding, evidence-based prioritization</strong>
+                </div>
+                <div class="meta-item">
+                    <span>Context</span>
+                    <strong>Course Project &#183; Team of 5 &#183; I designed and moderated the study</strong>
+                </div>
+                <div class="meta-item">
+                    <span>Timeline</span>
+                    <strong>3 weeks &#183; 2026</strong>
+                </div>
+            </div>
+
+            <div class="tldr-card">
+                <div class="tldr-header">
+                    <h2 class="at-a-glance-title">In this project, I...</h2>
+                </div>
+                <ul class="tldr-list">
+                    <li>Designed the full test protocol: <strong>three task scenarios</strong> with fixed success criteria, a background questionnaire, and a post-session SUS survey</li>
+                    <li>Recruited and scheduled <strong>6 participants</strong>, balanced between first-time and returning Trip.com users</li>
+                    <li>Moderated all <strong>six 35-minute sessions solo</strong>, running a think-aloud protocol while two note-takers logged behavior and a timer tracked steps</li>
+                    <li>Coded every transcript line by line, turning raw quotes into <strong>four themes and six severity-ranked findings</strong></li>
+                    <li>Authored the findings, recommendations, and SUS analysis sections of the final evaluation report</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- SECTION 1: WHY TRIP.COM -->
+        <div class="content-wrapper">
+            <h2>Feature-Rich but frustrating to use</h2>
+            <p>
+                Trip.com packs a lot into one platform, flights, hotels, and add-ons like eSIMs, all in a single interface. But as user of the platform myself, I kept running into the same problem: the site feels cluttered. 
+
+            </p>
+            <p>
+                Therefore, I built the study to find out where that clutter actually breaks down for real users. 
+
+            </p>
+        </div>
+
+        <!-- SECTION 2: TASK DESIGN -->
+        <div class="content-wrapper">
+            <h2>Three tasks, one for each pressure point</h2>
+            <p>
+                The study consist of a total of three tasks, each task came with a fixed scenario and a success criterion.
+            </p>
+        </div>
+
+        <div class="alias-table-wrap">
+            <table class="alias-table">
+                <thead><tr><th>Task</th><th>Constraint</th><th>Success criteria</th></tr></thead>
+                <tbody>
+                    <tr>
+                        <td class="alias-token">Flight Search &#183; Toronto &#8594; Beijing</td>
+                        <td>Non-stop, fixed dates, free baggage</td>
+                        <td class="alias-use">Reach checkout for the cheapest qualifying fare</td>
+                    </tr>
+                    <tr>
+                        <td class="alias-token">Hotel Booking &#183; New York</td>
+                        <td>Pet-friendly, 4+ stars, rating over 8.5</td>
+                        <td class="alias-use">Reach checkout for a hotel meeting all criteria</td>
+                    </tr>
+                    <tr>
+                        <td class="alias-token">eSIM Purchase &#183; Mainland China</td>
+                        <td>5+ days, 2GB+ data</td>
+                        <td class="alias-use">Reach checkout for a qualifying eSIM plan</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- SECTION 3: RUNNING THE SESSIONS -->
+        <div class="content-wrapper">
+            <h2>Facilitating all six sessions</h2>
+            <p>
+                I moderated every session in person, reading each scenario aloud, prompting participants to think out loud, and staying neutral, intervening only to clarify a task requirement, never to guide. Two note-takers logged behavior and errors, a timer tracked clicks and time on task, and every session was recorded over Zoom for later review.
+            </p>
+        </div>
+
+        <div class="alias-table-wrap">
+            <table class="alias-table">
+                <thead><tr><th>Attribute</th><th>Profile</th></tr></thead>
+                <tbody>
+                    <tr>
+                        <td class="alias-token">Age range</td>
+                        <td class="alias-use">6 participants, 20&#8211;30+, mostly 20&#8211;25</td>
+                    </tr>
+                    <tr>
+                        <td class="alias-token">Booking frequency</td>
+                        <td class="alias-use">5 of 6 book travel a few times a year</td>
+                    </tr>
+                    <tr>
+                        <td class="alias-token">Trip.com familiarity</td>
+                        <td class="alias-use">Evenly split, first-time vs. returning users</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- SECTION 4: SYNTHESIS -->
+        <div class="content-wrapper">
+            <h2>From quotes to themes</h2>
+            <p>
+                After the sessions, I coded every transcript line by line, tagging quotes with descriptive codes and grouping them into four themes: Information Architecture &amp; Navigation Disconnect, Filter Friction &amp; Discoverability Barriers, Cognitive Load &amp; Visual Overload, and User Preference &amp; Benchmarking. This pass is what turned six sets of session notes into a defensible, severity-ranked list of findings instead of a pile of complaints.
+            </p>
+        </div>
+
+        <div class="flow-figure">
+            <!-- Replace with your own screenshot of the thematic coding spreadsheet -->
+            <img src="assets/tripcom_thematic_analysis.png" alt="Thematic analysis spreadsheet coding participant quotes into themes" class="hover-target">
+            <p class="flow-caption"><strong>Coding pass.</strong> Every quote tagged with a code, then grouped into one of four themes.</p>
+        </div>
+
+        <!-- SECTION 5: OUTCOME -->
+        <div class="content-wrapper">
+            <h2>What the numbers said</h2>
+            <p>
+                Task completion looked strong on its own. It's the SUS score that shows what that completion actually cost people.
+            </p>
+        </div>
+
+        <div class="alias-table-wrap">
+            <table class="alias-table">
+                <thead><tr><th>Task</th><th>Success rate</th><th>Note</th></tr></thead>
+                <tbody>
+                    <tr>
+                        <td class="alias-token">Flight Search</td>
+                        <td>100% (6/6)</td>
+                        <td class="alias-use">Completed, but slowed by filter confusion</td>
+                    </tr>
+                    <tr>
+                        <td class="alias-token">Hotel Booking</td>
+                        <td>83.3% (5/6)</td>
+                        <td class="alias-use">One participant unable to fully complete</td>
+                    </tr>
+                    <tr>
+                        <td class="alias-token">eSIM Purchase</td>
+                        <td>100% (6/6)</td>
+                        <td class="alias-use">Most relied on search rather than navigation</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="content-wrapper">
+            <p>
+                The overall SUS score came in at <strong>66.25 out of 100</strong>, just under the 68-point average-usability benchmark, the "marginally acceptable" range. People could learn the site and get things done, but it never became easy. The lowest-scoring items were complexity and inconsistency, the same themes the coding pass had already surfaced independently.
+            </p>
+        </div>
+
+        <!-- SECTION 6: FINDINGS OVERVIEW -->
+        <div class="content-wrapper">
+            <h2>Six findings, ranked by severity</h2>
+            <p>
+                The transcripts explain the gap between a high completion rate and a below-benchmark SUS score. These are the six issues the coding surfaced, ranked by how much they blocked or slowed task completion.
+            </p>
+        </div>
+
+        <div class="findings-table-wrap">
+            <table class="findings-table">
+                <thead>
+                    <tr><th class="col-issue">Issue</th><th class="col-severity">Severity</th><th class="col-found">Participants affected</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="col-issue">eSIM entry point buried under "Attractions &amp; Tours"</td>
+                        <td class="col-severity"><span class="sev sev-high">Critical</span></td>
+                        <td class="col-found">6 of 6</td>
+                    </tr>
+                    <tr>
+                        <td class="col-issue">Pet-friendly filter hidden in a collapsed section</td>
+                        <td class="col-severity"><span class="sev sev-high">Critical</span></td>
+                        <td class="col-found">5 of 6</td>
+                    </tr>
+                    <tr>
+                        <td class="col-issue">Non-stop filter split across two inconsistent locations</td>
+                        <td class="col-severity"><span class="sev sev-high">Major</span></td>
+                        <td class="col-found">4 of 6</td>
+                    </tr>
+                    <tr>
+                        <td class="col-issue">Booking tabs visually indistinguishable, wrong-tab errors</td>
+                        <td class="col-severity"><span class="sev sev-high">Major</span></td>
+                        <td class="col-found">3 of 6</td>
+                    </tr>
+                    <tr>
+                        <td class="col-issue">Terminology mismatches how users categorize features</td>
+                        <td class="col-severity"><span class="sev sev-medium">Moderate</span></td>
+                        <td class="col-found">5 of 6</td>
+                    </tr>
+                    <tr>
+                        <td class="col-issue">eSIM product page lacks structured comparison</td>
+                        <td class="col-severity"><span class="sev sev-medium">Moderate</span></td>
+                        <td class="col-found">3 of 6</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- SECTION 7: FINDINGS IN DETAIL -->
+        <div class="content-wrapper">
+            <h2>Where the friction actually lives</h2>
+            <p>
+                Every write-up below traces back to specific quotes and behaviors from the sessions, not a general impression of the interface.
+            </p>
+        </div>
+
+        <div class="fix-list">
+            <div class="fix-item">
+                <div class="fix-media single">
+                    <!-- Replace with your own screenshot showing eSIM listed under Attractions & Tours -->
+                    <img src="assets/tripcom_esim_category.png" alt="eSIM purchase option listed under the Attractions and Tours category" class="hover-target">
+                </div>
+                <div class="fix-text">
+                    <span class="fix-number">01</span>
+                    <h3>eSIM is filed where no one thinks to look</h3>
+                    <p>All six participants struggled to find the eSIM feature, which sits under "Attractions &amp; Tours." A data plan has nothing to do with sightseeing, and participants said so directly: <em>"If I didn't know they provide eSIMs, I wouldn't explore it."</em> Five of six rated this the hardest task. <strong>Recommendation:</strong> move eSIM into a dedicated "Travel Essentials" category with a visible homepage entry point.</p>
+                </div>
+            </div>
+
+            <div class="fix-item">
+                <div class="fix-media single">
+                    <!-- Replace with your own screenshot of the pet-friendly filter buried in Property Facilities -->
+                    <img src="assets/tripcom_pet_filter.png" alt="Pet-friendly filter hidden inside a collapsed Property Facilities and Services section" class="hover-target">
+                </div>
+                <div class="fix-text">
+                    <span class="fix-number">02</span>
+                    <h3>The pet filter is a facility, not a search input</h3>
+                    <p>Five of six participants, including three self-identified frequent travel bookers, couldn't find the pet-friendly filter without help. It's nested inside a collapsed "Property Facilities and Services" section, a category people associate with amenities, not travel companions. <strong>Recommendation:</strong> promote "Pet-friendly" to a top-level filter and add a "Traveling with pets" toggle in the initial search form.</p>
+                </div>
+            </div>
+
+            <div class="fix-item">
+                <div class="fix-media single">
+                    <!-- Replace with your own screenshot of the split non-stop filter locations -->
+                    <img src="assets/tripcom_stops_filter.png" alt="Non-stop toggle separated from the sidebar stops filter, which only offers 1 stop or fewer" class="hover-target">
+                </div>
+                <div class="fix-text">
+                    <span class="fix-number">03</span>
+                    <h3>Non-stop exists, but not where people check first</h3>
+                    <p>The sidebar filter only offers "1 stop or fewer," with no explicit non-stop option, while a separate toggle at the top of the page does the same job. One participant assumed the option simply didn't exist. <strong>Recommendation:</strong> consolidate into a single filter system with an explicit "Non-stop (0 stops)" option.</p>
+                </div>
+            </div>
+
+            <div class="fix-item">
+                <div class="fix-media single">
+                    <!-- Replace with your own screenshot of the flights/hotels tab confusion -->
+                    <img src="assets/tripcom_tab_confusion.png" alt="Flights and Hotels booking tabs with low visual contrast between active and inactive states" class="hover-target">
+                </div>
+                <div class="fix-text">
+                    <span class="fix-number">04</span>
+                    <h3>The first click is often the wrong one</h3>
+                    <p>Three participants started entering flight details into the hotel search tab without noticing, including two who had used Trip.com before. Prior familiarity didn't prevent the error. <strong>Recommendation:</strong> strengthen contrast on the active tab and add a contextual heading above the search form.</p>
+                </div>
+            </div>
+
+            <div class="fix-item">
+                <div class="fix-media single">
+                    <!-- Replace with your own screenshot highlighting a confusing label, e.g. "Property Facilities and Services" -->
+                    <img src="assets/tripcom_terminology.png" alt="Property Facilities and Services label grouping unrelated filter options" class="hover-target">
+                </div>
+                <div class="fix-text">
+                    <span class="fix-number">05</span>
+                    <h3>Labels that don't match how people think</h3>
+                    <p>Across all three tasks, five participants hit labels that didn't match their mental model, from "1 stop or fewer" to "Property Facilities and Services" grouping pet policy in with barbecue amenities. None of these blocked completion, but each one added hesitation. <strong>Recommendation:</strong> standardize terminology to match how users actually categorize features.</p>
+                </div>
+            </div>
+
+            <div class="fix-item">
+                <div class="fix-media single">
+                    <!-- Replace with your own screenshot of the eSIM product page missing upfront details -->
+                    <img src="assets/tripcom_esim_product_page.png" alt="eSIM product page requiring a click into each listing to see data and duration" class="hover-target">
+                </div>
+                <div class="fix-text">
+                    <span class="fix-number">06</span>
+                    <h3>Comparison shouldn't require six clicks</h3>
+                    <p>Data allowance, duration, and price aren't shown until a user opens an individual eSIM listing. One participant called the section "lazily done compared to the rest of the website." <strong>Recommendation:</strong> surface key attributes at the listing level and allow side-by-side comparison.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 8: IMPACT -->
+        <div class="content-wrapper">
+            <h2>Impact &amp; what I took away</h2>
+            <p>
+                The study produced six findings, each traceable to specific transcript evidence, a full evaluation report, and a client-style set of prioritized recommendations. Every participant completed the eSIM and flight tasks, and yet every participant also independently criticized the same handful of design decisions, which told us the completion rate alone was hiding the real story.
+            </p>
+            <p>
+                Moderating all six sessions myself taught me how much unspoken friction lives underneath a "successful" task. People will work around a bad filter, backtrack out of the wrong tab, or fall back on the search bar rather than fail outright, and none of that shows up if you only track completion rate. Coding my own transcripts also sharpened how I build a case for a finding: a single frustrated comment is an anecdote, but the same complaint from five of six participants, tied to a specific screen, is a finding a team can act on.
+            </p>
+        </div>
+
+        <div class="footer-nav">
+            <a href="index.html#work" class="next-project next-only hover-target">
+                <span>Back to</span>
+                <strong>All Work &rarr;</strong>
+            </a>
+        </div>
+
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-left">
+                <div class="footer-name">Kyle Ma</div>
+                <p class="footer-tagline">UX &amp; Product Designer with a builder's and a business mind.</p>
+            </div>
+            <div class="footer-links">
+                <a href="index.html#work" class="hover-target">Work</a>
+                <a href="about.html" class="hover-target">About</a>
+                <a href="resume.html" class="hover-target">Resume</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2025 Kyle Ma.
+        </div>
+    </footer>
+
+    <div class="lightbox" id="lightbox">
+        <img id="lightbox-img" src="" alt="">
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

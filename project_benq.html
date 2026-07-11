@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script>
+        (function(){
+            var d = document.documentElement;
+            var stored = null;
+            try { stored = localStorage.getItem('theme'); } catch (e) {}
+            d.setAttribute('data-theme', stored || d.getAttribute('data-default-theme') || 'light');
+        })();
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#ECEDEF">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "vybtpd5e1t");
+    </script>
+    <title>Evaluating Zowie's Booking Platform | Kyle Ma</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="bg-aura" aria-hidden="true"></div>
+    <div class="noise-overlay"></div>
+
+    <nav>
+        <a href="index.html" class="logo hover-target">Kyle Ma</a>
+        <a href="index.html#experience" class="back-link hover-target">← Back to home</a>
+        <button class="theme-toggle hover-target" id="themeToggle" type="button" aria-label="Toggle light and dark mode">
+            <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+            <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <div class="scroll-progress-container">
+            <div class="scroll-progress-bar" id="progressBar"></div>
+        </div>
+    </nav>
+
+    <div class="case-study-container">
+
+        <div class="project-meta-header">
+            <span class="breadcrumb">BenQ Corporation &#183; UX Design Internship</span>
+            <h1 class="project-title">Evaluating Zowie's E-Sports Booking Platform</h1>
+            <p class="summary">
+                Zowie is BenQ's e-sports arena booking platform, newly launched when I joined the team. I ran mixed-methods research to evaluate the booking experience and turned what I found into wireframes that shipped.
+            </p>
+
+            <div class="meta-grid">
+                <div class="meta-item">
+                    <span>What this shows</span>
+                    <strong>Mixed-methods research, cross-functional collaboration, wireframing</strong>
+                </div>
+                <div class="meta-item">
+                    <span>Context</span>
+                    <strong>Internship &#183; BenQ Corporation &#183; Zowie E-Sports Platform</strong>
+                </div>
+                <div class="meta-item">
+                    <span>Timeline</span>
+                    <strong>June &ndash; September 2023</strong>
+                </div>
+            </div>
+
+            <div class="tldr-card">
+                <div class="tldr-header">
+                    <h2 class="at-a-glance-title">In this project, I...</h2>
+                </div>
+                <ul class="tldr-list">
+                    <li>Ran mixed-methods user research, including survey design and interviews, to evaluate the newly launched Zowie e-sports arena booking platform</li>
+                    <li>Turned research data into actionable design insights through reports, helping cross-functional teams align on the booking funnel's critical pain points</li>
+                    <li>Designed high-fidelity wireframes and optimized navigation structures for the service booking flow</li>
+                    <li>Contributed to a <strong>15% increase in product sales</strong> by improving the efficiency of that flow</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="content-wrapper">
+            <h2>More on this one is on the way</h2>
+            <p>
+                I'm still pulling together the specific research artifacts, wireframes, and before-and-after comparisons to walk through this project properly. Check back soon 🙂.
+            </p>
+        </div>
+
+        <div class="footer-nav">
+            <a href="index.html#experience" class="next-project next-only hover-target">
+                <span>Back to</span>
+                <strong>Experience &rarr;</strong>
+            </a>
+        </div>
+
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-left">
+                <div class="footer-name">Kyle Ma</div>
+                <p class="footer-tagline">UX &amp; Product Designer with a builder's and a business mind.</p>
+            </div>
+            <div class="footer-links">
+                <a href="index.html#work" class="hover-target">Work</a>
+                <a href="about.html" class="hover-target">About</a>
+                <a href="resume.html" class="hover-target">Resume</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2025 Kyle Ma.
+        </div>
+    </footer>
+
+    <div class="lightbox" id="lightbox">
+        <img id="lightbox-img" src="" alt="">
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

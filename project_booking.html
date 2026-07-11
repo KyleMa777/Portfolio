@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script>
+        (function(){
+            var d = document.documentElement;
+            var stored = null;
+            try { stored = localStorage.getItem('theme'); } catch (e) {}
+            d.setAttribute('data-theme', stored || d.getAttribute('data-default-theme') || 'light');
+        })();
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#ECEDEF">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "vybtpd5e1t");
+    </script>
+    <title>UofT Study Room Booking Portal Redesign | Kyle Ma</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="bg-aura" aria-hidden="true"></div>
+    <div class="noise-overlay"></div>
+
+    <nav>
+        <a href="index.html" class="logo hover-target">Kyle Ma</a>
+        <a href="index.html" class="back-link hover-target">&#8592; Back to all work</a>
+        <button class="theme-toggle hover-target" id="themeToggle" type="button" aria-label="Toggle light and dark mode">
+            <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+            <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+
+        <div class="scroll-progress-container">
+            <div class="scroll-progress-bar" id="progressBar"></div>
+        </div>
+    </nav>
+
+    <div class="case-study-container">
+
+        <div class="project-meta-header">
+            <span class="breadcrumb">Evaluation &amp; Redesign &#183; A/B Testing</span>
+            <h1 class="project-title">A cluttered campus booking tool, rebuilt around real evidence</h1>
+            <p class="summary">
+                The only one of my projects built on a <em>live, in-use system</em>, so it was an evaluation problem before it was a design one. I combined heuristic evaluation, usability testing, and A/B testing to diagnose exactly why room booking was slow, then turned that evidence into a measurably faster redesign.
+            </p>
+
+            <div class="meta-grid">
+                <div class="meta-item">
+                    <span>What this shows</span>
+                    <strong>UX evaluation &amp; research: heuristic analysis, usability testing, A/B testing, data analysis</strong>
+                </div>
+                <div class="meta-item">
+                    <span>Context</span>
+                    <strong>Course Project &#183; Team of 3 (I led evaluation &amp; redesign)</strong>
+                </div>
+                <div class="meta-item">
+                    <span>Timeline</span>
+                    <strong>4 weeks &#183; 2025</strong>
+                </div>
+            </div>
+
+            <div class="tldr-card">
+                <div class="tldr-header">
+                    <h2 class="at-a-glance-title">In this project, I...</h2>
+                </div>
+                <ul class="tldr-list">
+                    <li>Treated a high-traffic university booking system as an <strong>evaluation problem first</strong>, diagnosing where it failed before designing anything</li>
+                    <li>Ran a <strong>3-evaluator heuristic evaluation</strong> against Nielsen's heuristics, scoring each issue on a <strong>1&ndash;4 severity scale</strong> to prioritize what mattered</li>
+                    <li>Triangulated those findings with <strong>task-based usability testing</strong> (think-aloud + post-session interviews) to separate real blockers from noise</li>
+                    <li>Designed and ran <strong>A/B testing with 16 participants across 5 groups</strong>, analyzing completion time, task success rate, and preference</li>
+                    <li>Translated the evidence into a redesign that cut average task time by <strong>53.8 seconds</strong>, with <strong>100%</strong> of testers preferring it</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="content-wrapper">
+            <h2>How I evaluated the system</h2>
+            <p>
+                I made measuring the original system the first step of the process. Before designing anything, I ran three methods to pin down where it actually broke: heuristic evaluation, usability testing, and A/B testing.
+            </p>
+        </div>
+
+        <div class="method-rail">
+            <div class="method-node">
+                <div class="method-dot"><span>1</span></div>
+                <h3>Heuristic evaluation</h3>
+                <span class="method-fact">3 evaluators · 1&ndash;4 severity scale</span>
+                <p>Audited the live system against Nielsen's and Norman's principles, then ranked every issue by severity.</p>
+            </div>
+            <div class="method-node">
+                <div class="method-dot"><span>2</span></div>
+                <h3>Usability testing</h3>
+                <span class="method-fact">Think-aloud · post-session interview</span>
+                <p>Task-based sessions surfaced what tripped people up, and the interviews captured why.</p>
+            </div>
+            <div class="method-node">
+                <div class="method-dot"><span>3</span></div>
+                <h3>A/B testing</h3>
+                <span class="method-fact">16 participants · 5 groups</span>
+                <p>Compared legacy against the redesign on time, success, and preference.</p>
+            </div>
+        </div>
+
+        <div class="content-wrapper">
+            <h2>The problems I found</h2>
+        </div>
+
+        <div class="problem-detail">
+            <div class="problem-detail-head">
+                <span class="problem-tag">01</span>
+                <h3>Static Table Search</h3>
+            </div>
+            <p>Availability was buried in a static table, forcing users to scan manually, row by row, for an open room.</p>
+            <img src="assets/problem_01.png" class="project-image hover-target" alt="Legacy availability shown as a dense static table">
+        </div>
+
+        <div class="problem-detail">
+            <div class="problem-detail-head">
+                <span class="problem-tag">02</span>
+                <h3>Navigation &amp; Data-Reset Bug</h3>
+            </div>
+            <p>Switching between campus buildings reset the date to the current day, forcing users to repeatedly re-enter their search criteria.</p>
+            <img src="assets/problem_02.png" class="project-image hover-target" alt="Building switch resetting the selected date">
+        </div>
+
+        <div class="problem-detail">
+            <div class="problem-detail-head">
+                <span class="problem-tag">03</span>
+                <h3>Weak Signifiers</h3>
+            </div>
+            <p>Primary action buttons were too small and low-contrast to be noticed, so users missed the next step.</p>
+            <img src="assets/problem_03.png" class="project-image hover-target" alt="Low-contrast primary action button">
+        </div>
+
+        <div class="content-wrapper">
+            <h2>Wireframes built to test the fixes</h2>
+            <p>
+                For each problem I found, I designed a mid-fidelity wireframe of the fix, then put it in front of users to test. The static table became a requirements-driven search, so I could measure whether the new flow actually performed better than the original.
+            </p>
+        </div>
+
+        <div class="content-wrapper">
+            <img src="assets/mid_fidelity_wireframes.png" class="project-image hover-target" alt="Mid-fidelity wireframe overview">
+        </div>
+
+        <div class="content-wrapper">
+            <h2>Designing the A/B test &amp; analyzing the data</h2>
+            <p>
+                I set up a controlled comparison: the legacy interface (A) against my redesigned flow (B), run with <strong>16 participants split across 5 groups</strong>. Rather than rely on a single number, I measured three dimensions: how long the task took, whether people completed it successfully, and which version they preferred. That way efficiency, effectiveness, and satisfaction each had evidence behind it.
+            </p>
+        </div>
+
+        <div class="metric-row">
+            <div class="metric-card">
+                <div class="metric-value">&minus;53.8s</div>
+                <div class="metric-label">Average task time saved per booking on the redesigned flow, the <strong>efficiency</strong> measure</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value">4 / 5</div>
+                <div class="metric-label">Groups found filter-based discovery more intuitive than the static table, the <strong>preference</strong> measure</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value">100%</div>
+                <div class="metric-label">Of testers preferred the redesign overall, and every one completed the task faster</div>
+            </div>
+        </div>
+
+        <div class="content-wrapper">
+            <p>
+                I visualized each dimension so the pattern was legible at a glance rather than buried in a spreadsheet: preference as a distribution, completion time as a direct A-vs-B comparison, and task success rate across both versions.
+            </p>
+        </div>
+
+        <div class="pivot-grid">
+            <div class="pivot-item">
+                <div class="pivot-number">01</div>
+                <h3>Preference distribution</h3>
+                <p>Four of five groups favored requirements-based discovery over manual table scanning. A clear majority, not a marginal edge.</p>
+                <div class="phone-frame hover-target">
+                    <img src="assets/filters_piechart.png" alt="Pie chart of filter-based vs static-table preference">
+                </div>
+            </div>
+            <div class="pivot-item">
+                <div class="pivot-number">02</div>
+                <h3>Completion time, A vs B</h3>
+                <p>A direct comparison of task time on the legacy interface against the redesign confirmed the <strong>53.8-second</strong> average saving.</p>
+                <div class="phone-frame hover-target">
+                    <img src="assets/ab_test_time.png" alt="A/B test completion time comparison table">
+                </div>
+            </div>
+            <div class="pivot-item">
+                <div class="pivot-number">03</div>
+                <h3>Task success rate</h3>
+                <p>Tracking successful completions and errors across both versions showed the redesign didn't just feel faster. People failed the task less often.</p>
+                <div class="phone-frame hover-target">
+                    <img src="assets/success_rate_chart.png" alt="Task success rate and error rate across legacy and redesign">
+                </div>
+            </div>
+        </div>
+
+        <div class="content-wrapper">
+            <h2>Where the numbers needed the interview to explain them</h2>
+            <p>
+                One result didn't fit the "redesign wins" story: a new <strong>"Waitlist"</strong> feature for peak demand confused <strong>3 of 5</strong> groups. The quantitative data flagged the friction, but it was the <strong>post-session interviews</strong> that explained it. The problem wasn't the concept, it was the button wording. That's exactly why I paired methods: the numbers told me <em>where</em> to look, the interviews told me <em>why</em>, and the fix turned out to be microcopy, not a redesign.
+            </p>
+            <div class="phone-frame hover-target" style="max-width: 360px;">
+                <img src="assets/waitlist_ui_test.png" alt="Waitlist notification button UI tested with participants">
+            </div>
+        </div>
+
+        <div class="content-wrapper">
+            <h2>From evidence to the final design</h2>
+            <p>Every change below traces back to a specific piece of evidence: a severity-ranked heuristic issue, a tested behavior, or an A/B result. Nothing here is a guess.</p>
+        </div>
+
+        <div class="redesign-list">
+            <div class="redesign-row">
+                <div class="redesign-text">
+                    <div class="pivot-number">01</div>
+                    <h3>Requirements-Based Recommendations</h3>
+                    <p>Fixes <strong>Problem 01.</strong> Replaced manual table scanning with smart recommendations. Users input their needs and the system instantly surfaces relevant rooms.</p>
+                </div>
+                <div class="redesign-media hover-target">
+                    <img src="assets/Redesign1.png" alt="Automated requirements-based search">
+                </div>
+            </div>
+            <div class="redesign-row">
+                <div class="redesign-text">
+                    <div class="pivot-number">02</div>
+                    <h3>Persistent Filters</h3>
+                    <p>Fixes <strong>Problem 02.</strong> Resolved the data-reset bug so filter criteria and search progress now persist across screens. No more re-entering data.</p>
+                </div>
+                <div class="redesign-media hover-target">
+                    <img src="assets/Redesign2.png" alt="Persistent filters and seamless navigation">
+                </div>
+            </div>
+            <div class="redesign-row">
+                <div class="redesign-text">
+                    <div class="pivot-number">03</div>
+                    <h3>Clearer Signifiers &amp; Layout</h3>
+                    <p>Fixes <strong>Problem 03.</strong> Larger primary buttons, stronger contrast, and more breathing room make the next action obvious at a glance.</p>
+                </div>
+                <div class="redesign-media hover-target">
+                    <img src="assets/Redesign8.png" alt="Enhanced visibility and breathing room">
+                </div>
+            </div>
+            <div class="redesign-row">
+                <div class="redesign-text">
+                    <div class="pivot-number">04</div>
+                    <h3>Optimized Microcopy</h3>
+                    <p>Addresses the A/B finding. Rewrote button labels and feedback to eliminate the waitlist phrasing confusion testers ran into.</p>
+                </div>
+                <div class="redesign-media hover-target">
+                    <img src="assets/Redesign3.png" alt="Optimized microcopy and waitlist feature">
+                </div>
+            </div>
+        </div>
+
+        <div class="content-wrapper">
+            <h2>Impact &amp; what I took away</h2>
+            <p>
+                <strong>The outcome:</strong> a redesign that cut average task time by 53.8 seconds and was preferred by 100% of testers, a measurable improvement to a tool thousands of students rely on.
+            </p>
+            <p>
+                <strong>The lesson:</strong> A/B testing surfaced a need I hadn't designed for. I'd optimized single-room booking, but users actually needed to chain multiple rooms together to cover a continuous time slot. That reframed efficiency for me. It isn't only speed and simplicity, it's flexibility in messy, real-world situations. On the next product, this is exactly the kind of hidden requirement I now design to catch early, before it shows up in testing.
+            </p>
+            <p>
+                More than the redesign itself, this project is where I learned to <strong>trust a structured evaluation process over instinct</strong>: to combine expert review, observed behavior, and quantitative testing so that every design decision can point back to evidence. That's the analytical discipline I bring to a product team.
+            </p>
+        </div>
+
+        <div class="footer-nav">
+            <a href="index.html#work" class="next-project next-only hover-target">
+                <span>Back to</span>
+                <strong>All Work &#8594;</strong>
+            </a>
+        </div>
+
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-left">
+                <div class="footer-name">Kyle Ma</div>
+                <p class="footer-tagline">UX &amp; Product Designer with a builder's and a business mind.</p>
+            </div>
+            <div class="footer-links">
+                <a href="index.html#work" class="hover-target">Work</a>
+                <a href="about.html" class="hover-target">About</a>
+                <a href="resume.html" class="hover-target">Resume</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &#169; 2025 Kyle Ma. Built with HTML, CSS, and coffee, by me.
+        </div>
+    </footer>
+
+    <div class="lightbox" id="lightbox">
+        <img id="lightbox-img" src="" alt="">
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

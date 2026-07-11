@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script>
+        (function(){
+            var d = document.documentElement;
+            var stored = null;
+            try { stored = localStorage.getItem('theme'); } catch (e) {}
+            d.setAttribute('data-theme', stored || d.getAttribute('data-default-theme') || 'light');
+        })();
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#ECEDEF">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "vybtpd5e1t");
+    </script>
+    <title>Map & Moment | Kyle Ma</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="bg-aura" aria-hidden="true"></div>
+    <div class="noise-overlay"></div>
+
+    <nav>
+        <a href="index.html" class="logo hover-target">Kyle Ma</a>
+        <a href="index.html" class="back-link hover-target">← Back to all work</a>
+        <button class="theme-toggle hover-target" id="themeToggle" type="button" aria-label="Toggle light and dark mode">
+            <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+            <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <div class="scroll-progress-container">
+            <div class="scroll-progress-bar" id="progressBar"></div>
+        </div>
+    </nav>
+
+    <div class="case-study-container">
+
+        <div class="project-meta-header">
+            <span class="breadcrumb">Team &rarr; Solo &#183; Hi-Fi &amp; Design System</span>
+            <h1 class="project-title">Map &amp; Moment: Building the Design System Behind Private Memories</h1>
+            <p class="summary">
+                Personal Landmarks started as a three-person team's mid-fidelity prototype, a private, location-triggered way to leave memories for the people you trust. I carried it forward from there, through usability testing and peer critique, through a round of visual direction, into a solo high-fidelity redesign anchored by a full design system I built from scratch.
+            </p>
+
+            <div class="meta-grid">
+                <div class="meta-item">
+                    <span>What this shows</span>
+                    <strong>Design system and token architecture, evidence-based iteration, team-to-solo ownership</strong>
+                </div>
+                <div class="meta-item">
+                    <span>Context</span>
+                    <strong>Course Project (INF2191) &#183; Team of 3 for mid-fi &#183; Solo for hi-fi and design system</strong>
+                </div>
+                <div class="meta-item">
+                    <span>Timeline</span>
+                    <strong>4 weeks &#183; 2025</strong>
+                </div>
+            </div>
+
+            <div class="tldr-card">
+                <div class="tldr-header">
+                    <h2 class="at-a-glance-title">In this project, I...</h2>
+                </div>
+                <ul class="tldr-list">
+                    <li>Collaborated in a <strong>3-person team</strong> on a mid-fidelity prototype for two distinct personas, a Memory Sharer and an Explorer, each with a fully mapped task flow</li>
+                    <li>Validated the prototype through <strong>usability testing (4 participants)</strong> and <strong>peer design critique</strong>, run in parallel</li>
+                    <li>Explored three style tile directions and ran <strong>dot-voting with 8 participants</strong>, then made a judgment call when the most popular option still had a usability gap</li>
+                    <li>Solo-led the high-fidelity redesign, translating that feedback into <strong>6 specific interface changes</strong> in one focused pass</li>
+                    <li>Built a complete <strong>design system from the ground up</strong>: spacing and sizing tokens, a typography scale, a semantic color-alias system, and a documented component library</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- SECTION 1: THE BRIEF & THE PEOPLE -->
+        <div class="content-wrapper">
+            <h2>A private layer over public maps</h2>
+            <p>
+                Most location apps show what's permanently and publicly there: restaurants, landmarks, traffic. Personal Landmarks needed to show something else entirely, private and affective history that only means something to the people who lived it. One pain point from the brief set the tone for everything: <em>"I want my children to know what this street meant to our family thirty years ago."</em> The product had to let someone drop an emotional marker at a real place, control exactly who could find it, and trust that no algorithm would ever harvest it.
+            </p>
+            <p>I designed around two people who needed this for opposite reasons.</p>
+        </div>
+
+        <div class="persona-image-grid">
+            <div class="persona-image-item">
+                <img src="assets/persona_linda.png" alt="Linda persona card, 65, retired, the Memory Sharer" class="hover-target">
+                <p class="persona-image-caption"><strong>Linda, 65, the Memory Sharer.</strong> Wants a simple way to leave memories at places that matter, with confidence that nothing she does will be lost or misdirected.</p>
+            </div>
+            <div class="persona-image-item">
+                <img src="assets/persona_mia.png" alt="Mia persona card, 25, junior analyst, the Explorer" class="hover-target">
+                <p class="persona-image-caption"><strong>Mia, 25, the Explorer.</strong> Wants to discover family history casually, without sitting through a formal "tell me about the past" conversation.</p>
+            </div>
+        </div>
+
+        <!-- SECTION 2: TASK FLOWS -->
+        <div class="content-wrapper">
+            <h2>Designing for both ends of a memory</h2>
+            <p>
+                Before any screen existed, the team mapped two task flows end to end. One follows Linda creating a circle, dropping a memory at High Park, and correcting a visibility mistake. The other follows Mia discovering a nearby memory, responding to it, and requesting access to one she didn't yet have. Both flows include a deliberate complicated path: what happens when someone gets it wrong, not just when everything goes right.
+            </p>
+        </div>
+
+        <div class="flow-figure">
+            <img src="assets/taskflow_linda.png" alt="Task Flow 1: Linda sets up a circle, creates a spark, and fixes privacy settings" class="hover-target">
+            <p class="flow-caption"><strong>Task Flow 1.</strong> Linda creates a circle, drops a memory at High Park, and corrects a visibility mistake in two taps.</p>
+        </div>
+        <div class="flow-figure">
+            <img src="assets/taskflow_mia.png" alt="Task Flow 2: Mia discovers sparks, responds, requests access, and adds a friend" class="hover-target">
+            <p class="flow-caption"><strong>Task Flow 2.</strong> Mia discovers a nearby memory, responds to it, and requests access to one outside her circle.</p>
+        </div>
+
+        <!-- SECTION 3: USABILITY TESTING & PEER CRITIQUE -->
+        <div class="content-wrapper">
+            <h2>Testing the prototype from two angles</h2>
+            <p>
+                I checked the mid-fi prototype two ways at once instead of relying on one. Moderated usability testing put four participants through a think-aloud session across two tasks: creating a memory with specific visibility settings, and navigating circles to find and share one. In parallel, four peer designers reviewed the same screens using a structured critique format, stating a design objective and judging whether each element actually served it. Several problems showed up in both. Testers got stuck on the same things peers flagged as unclear, which made those findings hard to dismiss as one person's opinion.
+            </p>
+        </div>
+
+        <div class="findings-table-wrap">
+            <table class="findings-table">
+                <thead>
+                    <tr><th class="col-issue">Issue</th><th class="col-severity">Severity</th><th class="col-found">Found by</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="col-issue">Inconsistent terminology between "Memory" and "Spark"</td>
+                        <td class="col-severity"><span class="sev sev-high">High</span></td>
+                        <td class="col-found found-both">Usability Testing + Peer Critique</td>
+                    </tr>
+                    <tr>
+                        <td class="col-issue">Map pins identical regardless of type</td>
+                        <td class="col-severity"><span class="sev sev-high">High</span></td>
+                        <td class="col-found found-both">Usability Testing + Peer Critique</td>
+                    </tr>
+                    <tr>
+                        <td class="col-issue">Hidden "Forever" duration option, off screen with no scroll cue</td>
+                        <td class="col-severity"><span class="sev sev-high">High</span></td>
+                        <td class="col-found">Usability Testing</td>
+                    </tr>
+                    <tr>
+                        <td class="col-issue">Duration chips behaved as toggles instead of a single choice</td>
+                        <td class="col-severity"><span class="sev sev-high">High</span></td>
+                        <td class="col-found">Usability Testing</td>
+                    </tr>
+                    <tr>
+                        <td class="col-issue">No visible link between a selected pin and its matching card</td>
+                        <td class="col-severity"><span class="sev sev-medium">Medium</span></td>
+                        <td class="col-found">Peer Critique</td>
+                    </tr>
+                    <tr>
+                        <td class="col-issue">"New Spark Added" cards showed no preview content</td>
+                        <td class="col-severity"><span class="sev sev-medium">Medium</span></td>
+                        <td class="col-found found-both">Usability Testing + Peer Critique</td>
+                    </tr>
+                    <tr>
+                        <td class="col-issue">Visibility screen combined too many unfamiliar concepts at once</td>
+                        <td class="col-severity"><span class="sev sev-medium">Medium</span></td>
+                        <td class="col-found">Peer Critique</td>
+                    </tr>
+                    <tr>
+                        <td class="col-issue">Multi-step creation flow gave unclear progress feedback</td>
+                        <td class="col-severity"><span class="sev sev-medium">Medium</span></td>
+                        <td class="col-found">Usability Testing</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- SECTION 4: VISUAL DIRECTION -->
+        <div class="content-wrapper">
+            <h2>Setting the emotional tone before the interface</h2>
+            <p>
+                Three directions went up for review: a warm, intimate palette in cream and coral, a clean, bright one in amber and charcoal, and a playful one in rose and sunset. Eight participants dot-voted, and the warm direction won clearly, five votes to two to one.
+            </p>
+            <p>
+                But the same interviews surfaced a problem the vote didn't catch. Four of the eight people who had just voted for the winning tile still couldn't tell its map pins apart, since every type used the same shape in a different color. The final direction keeps that palette and typography, and borrows pin shapes from the third option, so type reads by shape before color registers.
+            </p>
+        </div>
+
+        <div class="final-tile-figure">
+            <span class="final-tile-label">Final direction</span>
+            <img src="assets/style_tile_final.png" alt="Final style tile, merging A's palette and typography with C's differentiated pin shapes" class="hover-target">
+        </div>
+
+        <!-- SECTION 5: ONE REDESIGN PASS, SIX FIXES -->
+        <div class="content-wrapper">
+            <h2>6 specific changes, one redesign pass</h2>
+            <p>
+                Every change below answers a specific finding from the section above, and all 6 landed in the same focused round of redesign rather than separate cycles.
+            </p>
+        </div>
+
+        <div class="fix-list">
+            <div class="fix-item">
+                <div class="fix-media wide">
+                    <img src="assets/onboard_strip.png" alt="Four onboarding screens: Welcome, Pin your memories, Share with circles, Discover nearby" class="hover-target">
+                </div>
+                <div class="fix-text">
+                    <span class="fix-number">01</span>
+                    <h3>A four-screen onboarding sequence</h3>
+                    <p>The mid-fi dropped people straight onto the map with no introduction, and one tester spent over two minutes there unsure how to start. Onboarding now walks through the core concept, the memory types, circles, and proximity-based discovery before anyone touches a real screen.</p>
+                </div>
+            </div>
+
+            <div class="fix-item">
+                <div class="fix-media single">
+                    <img src="assets/help_icon_tooltip.png" alt="Help icon tooltip explaining the photo and voice memo upload" class="hover-target">
+                </div>
+                <div class="fix-text">
+                    <span class="fix-number">02</span>
+                    <h3>Help icons next to unfamiliar settings</h3>
+                    <p>"Trigger Distance" and "Duration" have no existing mental model, and testers conflated the two. A small icon next to each setting now reveals a plain-language explanation in the same warm, first-person voice as the rest of the app.</p>
+                </div>
+            </div>
+
+            <div class="fix-item">
+                <div class="fix-media single">
+                    <img src="assets/pin_hover_preview.png" alt="Map pin hover preview card showing Anniversary, First Christmas, Family, 120m away" class="hover-target">
+                </div>
+                <div class="fix-text">
+                    <span class="fix-number">03</span>
+                    <h3>Map pins, from tap-to-jump to hover-to-preview</h3>
+                    <p>Peer critique flagged a specific gap: no visual cue tied a selected pin to its matching card in the list below. Hovering a pin now surfaces a compact preview card first, with type, date, title, circle, and distance, before committing to the full detail page.</p>
+                </div>
+            </div>
+
+            <div class="fix-item">
+                <div class="fix-media compare">
+                    <div class="compare-stage">
+                        <span>Mid-fi &#183; 3 levels deep</span>
+                        <img src="assets/midfi_people_circles.png" alt="Mid-fi People and Circles overview, leading to separate sub-pages" class="hover-target">
+                    </div>
+                    <div class="compare-arrow">&rarr;</div>
+                    <div class="compare-stage">
+                        <span>Hi-fi &#183; 1 page</span>
+                        <img src="assets/hifi_people_circles.png" alt="Hi-fi People and Circles consolidated into a single page" class="hover-target">
+                    </div>
+                </div>
+                <div class="fix-text">
+                    <span class="fix-number">04</span>
+                    <h3>People &amp; Circles, from three pages to one</h3>
+                    <p>Circles and friends were spread across three levels of navigation: an overview page, then separate sub-pages for circle details and the full friend list. Everything now lives on a single page, with friends in a row at the top and circles listed inline below.</p>
+                </div>
+            </div>
+
+            <div class="fix-item">
+                <div class="fix-media compare">
+                    <div class="compare-stage">
+                        <span>Mid-fi &#183; Step 2 of 3</span>
+                        <img src="assets/midfi_set_visibility.png" alt="Mid-fi Set Visibility, step 2 of 3" class="hover-target">
+                    </div>
+                    <div class="compare-arrow">&rarr;</div>
+                    <div class="compare-stage">
+                        <span>Hi-fi &#183; Step 2 of 2</span>
+                        <img src="assets/hifi_set_visibility_review.png" alt="Hi-fi Set Visibility and Review merged, step 2 of 2" class="hover-target">
+                    </div>
+                </div>
+                <div class="fix-text">
+                    <span class="fix-number">05</span>
+                    <h3>The creation flow, from three steps to two</h3>
+                    <p>Memory Details, Set Visibility, and Review were three separate steps, and one tester backtracked twice, unsure where they were in the process. Visibility and review are now merged into a single step, so creating a memory takes two screens instead of three.</p>
+                </div>
+            </div>
+
+            <div class="fix-item">
+                <div class="fix-media compare">
+                    <div class="compare-stage">
+                        <span>Mid-fi &#183; "Spark Type"</span>
+                        <img src="assets/midfi_memory_details.png" alt="Mid-fi Memory Details screen labeled Spark Type, with Memory as one of the type options" class="hover-target">
+                    </div>
+                    <div class="compare-arrow">&rarr;</div>
+                    <div class="compare-stage">
+                        <span>Hi-fi &#183; "Memory"</span>
+                        <img src="assets/hifi_memory_details.png" alt="Hi-fi Memory Details screen, with Milestone, Story, Anniversary and Other as subtypes" class="hover-target">
+                    </div>
+                </div>
+                <div class="fix-text">
+                    <span class="fix-number">06</span>
+                    <h3>"Spark" became "Memory"</h3>
+                    <p>The mid-fi alternated between "Memory" and "Spark" across screens, and three of four testers found it disorienting. Hi-fi copy standardizes on "Memory" throughout, with Milestone, Story, Anniversary, and Other as its subtypes. That change also resolved a smaller complaint on its own: <strong>"Memory" had been listed as a confusing subtype of itself</strong>, and removing it left a cleaner, mutually exclusive set.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 6: THE DESIGN SYSTEM -->
+        <div class="content-wrapper">
+            <h2>Building the system behind the screens</h2>
+            <p>
+                Six fixes solved six screens. They didn't guarantee the next screen I designed would feel consistent with the first one. So I treated this redesign as a chance to do something none of my other projects required: build the system underneath the screens, not just the screens themselves.
+            </p>
+            <p>
+                Everything starts from an <strong>8px base unit</strong>. Every spacing value, corner radius, and component size traces back to a documented token, not "this looks about right," but a numbered scale anyone on a team could reference and extend without guessing.
+            </p>
+        </div>
+
+        <div class="content-wrapper ds-block">
+            <span class="ds-label">Spacing scale</span>
+            <img src="assets/ds_spacing.png" alt="Spacing scale token reference, 4 to 48px" class="hover-target" style="width:100%; display:block; border-radius:var(--radius-lg); border:1px solid var(--line); cursor:zoom-in;">
+        </div>
+
+        <div class="content-wrapper">
+            <p>
+                Color works the same way, and it's the part I'd point to first. The palette is four colors, cream, coral, warm grey, sage, but the part that actually does the work is the layer underneath it. A primary button isn't styled with "coral," it's styled with a semantic alias like <code>action-primary-default</code>, which resolves to coral-500, with coral-700 defined for its hover state and coral-300 for disabled. Change the alias once, and every button in the product inherits the update. Nothing gets repicked by eye, screen by screen.
+            </p>
+        </div>
+
+        <div class="content-wrapper ds-block">
+            <span class="ds-label">Global color tokens</span>
+            <div class="swatch-group-label">Coral &#183; primary actions, CTAs, anniversary pins</div>
+            <div class="swatch-row">
+                <div><div class="swatch" style="background:#FCE8E0;"></div><div class="swatch-name">coral-100</div><div class="swatch-hex">#FCE8E0</div></div>
+                <div><div class="swatch" style="background:#F3B39E;"></div><div class="swatch-name">coral-300</div><div class="swatch-hex">#F3B39E</div></div>
+                <div><div class="swatch" style="background:#E8825B;"></div><div class="swatch-name">coral-500</div><div class="swatch-hex">#E8825B</div></div>
+                <div><div class="swatch" style="background:#C75F38;"></div><div class="swatch-name">coral-700</div><div class="swatch-hex">#C75F38</div></div>
+            </div>
+            <div class="swatch-group-label">Sage &#183; secondary actions, milestone pins</div>
+            <div class="swatch-row">
+                <div><div class="swatch" style="background:#EAF2E8;"></div><div class="swatch-name">sage-100</div><div class="swatch-hex">#EAF2E8</div></div>
+                <div><div class="swatch" style="background:#BCD1B6;"></div><div class="swatch-name">sage-300</div><div class="swatch-hex">#BCD1B6</div></div>
+                <div><div class="swatch" style="background:#8FAC84;"></div><div class="swatch-name">sage-500</div><div class="swatch-hex">#8FAC84</div></div>
+                <div><div class="swatch" style="background:#6A8760;"></div><div class="swatch-name">sage-700</div><div class="swatch-hex">#6A8760</div></div>
+            </div>
+            <div class="swatch-group-label">Warm Grey &#183; text, borders, story pins</div>
+            <div class="swatch-row">
+                <div><div class="swatch" style="background:#F5F5F5;"></div><div class="swatch-name">warmgrey-100</div><div class="swatch-hex">#F5F5F5</div></div>
+                <div><div class="swatch" style="background:#D1D1D1;"></div><div class="swatch-name">warmgrey-300</div><div class="swatch-hex">#D1D1D1</div></div>
+                <div><div class="swatch" style="background:#8C8C8C;"></div><div class="swatch-name">warmgrey-500</div><div class="swatch-hex">#8C8C8C</div></div>
+                <div><div class="swatch" style="background:#4A4A4A;"></div><div class="swatch-name">warmgrey-700</div><div class="swatch-hex">#4A4A4A</div></div>
+            </div>
+        </div>
+
+        <div class="content-wrapper ds-block">
+            <span class="ds-label">Semantic alias layer</span>
+            <div class="alias-table-wrap">
+                <table class="alias-table">
+                    <thead><tr><th>Alias</th><th>Resolves to</th><th>Use case</th></tr></thead>
+                    <tbody>
+                        <tr>
+                            <td class="alias-token">action-primary-default</td>
+                            <td><span class="alias-resolve"><span class="alias-dot" style="background:#E8825B;"></span>coral-500</span></td>
+                            <td class="alias-use">Primary buttons, CTAs, active tab</td>
+                        </tr>
+                        <tr>
+                            <td class="alias-token">action-primary-hover</td>
+                            <td><span class="alias-resolve"><span class="alias-dot" style="background:#C75F38;"></span>coral-700</span></td>
+                            <td class="alias-use">Pressed state for primary actions</td>
+                        </tr>
+                        <tr>
+                            <td class="alias-token">action-secondary-default</td>
+                            <td><span class="alias-resolve"><span class="alias-dot" style="background:#8FAC84;"></span>sage-500</span></td>
+                            <td class="alias-use">Secondary buttons, QR code actions</td>
+                        </tr>
+                        <tr>
+                            <td class="alias-token">text-primary</td>
+                            <td><span class="alias-resolve"><span class="alias-dot" style="background:#4A4A4A;"></span>warmgrey-700</span></td>
+                            <td class="alias-use">Headings, titles, body text</td>
+                        </tr>
+                        <tr>
+                            <td class="alias-token">text-secondary</td>
+                            <td><span class="alias-resolve"><span class="alias-dot" style="background:#8C8C8C;"></span>warmgrey-500</span></td>
+                            <td class="alias-use">Metadata, captions, timestamps</td>
+                        </tr>
+                        <tr>
+                            <td class="alias-token">bg-default</td>
+                            <td><span class="alias-resolve"><span class="alias-dot" style="background:#FFFDFB; border-color:var(--line);"></span>cream-100</span></td>
+                            <td class="alias-use">Page background, main canvas</td>
+                        </tr>
+                        <tr>
+                            <td class="alias-token">border-default</td>
+                            <td><span class="alias-resolve"><span class="alias-dot" style="background:#D1D1D1;"></span>warmgrey-300</span></td>
+                            <td class="alias-use">Input borders, inactive chips</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="content-wrapper">
+            <p>
+                The same logic carries into typography, a five-level scale split across two typefaces: a rounded display face for headings, and Inter for everything functional. It also carries into a documented component library: buttons in three states, inputs, chips, and the pin legend the redesign introduced.
+            </p>
+        </div>
+
+        <div class="content-wrapper ds-block">
+            <span class="ds-label">Typography scale</span>
+            <div class="type-specimen">
+                <div class="type-row">
+                    <div class="type-meta"><strong>Heading 1</strong>Arial Rounded MT Bold &#183; 24/32</div>
+                    <div class="type-sample ts-h1">Memories worth revisiting</div>
+                </div>
+                <div class="type-row">
+                    <div class="type-meta"><strong>Heading 2</strong>Arial Rounded MT Bold &#183; 20/28</div>
+                    <div class="type-sample ts-h2">Memories worth revisiting</div>
+                </div>
+                <div class="type-row">
+                    <div class="type-meta"><strong>Heading 3</strong>Arial Rounded MT Bold &#183; 16/24</div>
+                    <div class="type-sample ts-h3">Memories worth revisiting</div>
+                </div>
+                <div class="type-row">
+                    <div class="type-meta"><strong>Body</strong>Inter Regular &#183; 14/20</div>
+                    <div class="type-sample ts-body">Memories worth revisiting.</div>
+                </div>
+                <div class="type-row">
+                    <div class="type-meta"><strong>Body Bold</strong>Inter Bold &#183; 14/20</div>
+                    <div class="type-sample ts-bodybold">Memories worth revisiting.</div>
+                </div>
+                <div class="type-row">
+                    <div class="type-meta"><strong>Caption</strong>Inter Regular &#183; 12/16</div>
+                    <div class="type-sample ts-caption">March 15, 2026 &#183; High School Friends</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-wrapper ds-block">
+            <span class="ds-label">Components</span>
+            <div class="component-row">
+                <div>
+                    <div class="swatch-group-label" style="margin-top:0;">Primary button, three states</div>
+                    <img src="assets/ds_buttons.png" alt="Primary button, default, hover, and disabled states" class="hover-target" style="width:100%; display:block; border-radius:var(--radius-lg); border:1px solid var(--line); cursor:zoom-in;">
+                </div>
+                <div>
+                    <div class="swatch-group-label" style="margin-top:0;">Pin legend, by shape and color</div>
+                    <img src="assets/ds_pin_legend.png" alt="Pin legend, Anniversary, Milestone, and Story" class="hover-target" style="width:100%; display:block; border-radius:var(--radius-lg); border:1px solid var(--line); cursor:zoom-in;">
+                </div>
+            </div>
+        </div>
+
+        <div class="content-wrapper">
+            <p>
+                This is the part of the project I'd point to if asked whether I can hand off a design that holds together at scale, not just one that looks good in a single screen.
+            </p>
+        </div>
+
+        <!-- SECTION 7: IMPACT -->
+        <div class="content-wrapper">
+            <h2>Impact &amp; what I took away</h2>
+            <p>
+                The outcome is a prototype validated by two independent evidence sources, six interface fixes that each trace to a specific finding, and a documented design system covering tokens, type, color, and components, the first time I'd built one from scratch rather than inheriting one.
+            </p>
+            <p>
+                The clearest lesson came from the style tile vote. The numbers said the warm direction was the answer; the interviews said it still had a legibility gap nobody flagged when they voted for it. Popularity and usability are different questions, and I'd test them separately from here on rather than trust one round of voting to answer both.
+            </p>
+            <p>
+                The system itself taught me something more practical. Once spacing, color, and type live in tokens instead of individual decisions, consistency stops being something I have to remember to maintain. It becomes the default. That's the discipline I'd bring to a product team scaling past a handful of screens.
+            </p>
+        </div>
+
+        <div class="footer-nav">
+            <a href="index.html#work" class="next-project next-only hover-target">
+                <span>Back to</span>
+                <strong>All Work &rarr;</strong>
+            </a>
+        </div>
+
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-left">
+                <div class="footer-name">Kyle Ma</div>
+                <p class="footer-tagline">UX &amp; Product Designer with a builder's and a business mind.</p>
+            </div>
+            <div class="footer-links">
+                <a href="index.html#work" class="hover-target">Work</a>
+                <a href="about.html" class="hover-target">About</a>
+                <a href="resume.html" class="hover-target">Resume</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2025 Kyle Ma.
+        </div>
+    </footer>
+
+    <div class="lightbox" id="lightbox">
+        <img id="lightbox-img" src="" alt="">
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

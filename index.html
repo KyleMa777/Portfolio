@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en" data-default-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <script>
+        (function(){
+            var d = document.documentElement;
+            var stored = null;
+            try { stored = localStorage.getItem('theme'); } catch (e) {}
+            d.setAttribute('data-theme', stored || d.getAttribute('data-default-theme') || 'light');
+        })();
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Kyle Ma, UX Designer & Researcher. Master of Information student at University of Toronto. Portfolio featuring product design, UX research, and interaction design projects.">
+    <meta name="theme-color" content="#ECEDEF">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "vybtpd5e1t");
+    </script>
+    <title>Portfolio | Kyle Ma</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="is-home">
+
+    <div class="bg-aura" aria-hidden="true"></div>
+    <div class="noise-overlay"></div>
+
+    <nav class="pill-nav-wrap">
+        <a href="index.html" class="logo hover-target">Kyle Ma</a>
+        <div class="pill-nav" role="navigation" aria-label="Section navigation">
+            <a href="#about" class="pill-link" data-section="about">About</a>
+            <a href="#experience" class="pill-link" data-section="experience">Experience</a>
+            <a href="#work" class="pill-link" data-section="work">Work</a>
+            <a href="#skills" class="pill-link" data-section="skills">Skills</a>
+            <a href="about.html" class="pill-link">My Bio</a>
+            <a href="resume.html" class="pill-link">Resume</a>
+        </div>
+        <button class="theme-toggle hover-target" id="themeToggle" type="button" aria-label="Toggle light and dark mode">
+            <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+            <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <div class="scroll-progress-container">
+            <div class="scroll-progress-bar" id="progressBar"></div>
+        </div>
+    </nav>
+
+
+    <header class="hero-v3" id="top">
+        <div class="hero-v3-inner">
+            <span class="hero-eyebrow">UX Researcher &amp; Designer / Product Designer · Toronto</span>
+
+            <h1 class="hero-name">
+                <span class="hl-line"><span class="hl-inner">Kyle Ma</span></span>
+            </h1>
+
+            <p class="hero-tagline">
+                I design products with a <span class="highlight">builder's</span> &amp; <span class="highlight">business</span> mind.
+            </p>
+
+            <div class="cta-container">
+                <a href="#work" class="cta-button">
+                    View Selected Work <span class="arrow">→</span>
+                </a>
+                <a href="about.html" class="cta-button outline">
+                    More About Me
+                </a>
+            </div>
+        </div>
+    </header>
+
+
+    <div class="marquee" aria-hidden="true">
+        <div class="marquee-track">
+            <span>UX Design</span><span class="dot">•</span>
+            <span>Product Design</span><span class="dot">•</span>
+            <span>UX Research</span><span class="dot">•</span>
+            <span>Web Development</span><span class="dot">•</span>
+            <span>Interaction Design</span><span class="dot">•</span>
+            <span>Design Systems</span><span class="dot">•</span>
+            <span>UX Design</span><span class="dot">•</span>
+            <span>Product Design</span><span class="dot">•</span>
+            <span>UX Research</span><span class="dot">•</span>
+            <span>Web Development</span><span class="dot">•</span>
+            <span>Interaction Design</span><span class="dot">•</span>
+            <span>Design Systems</span><span class="dot">•</span>
+        </div>
+    </div>
+
+
+    <section class="about-section" id="about">
+        <div class="about-inner">
+            <div class="about-lead reveal-up">
+                <span class="section-tag">About</span>
+                <h2>I came to UX from two directions.</h2>
+            </div>
+            <div class="about-cols">
+                <p class="reveal-up">
+                    A degree in <strong>Digital Enterprise Management</strong> taught me to think in business goals, not just interfaces. Hand-coding my own projects, including this site, taught me to ship in the browser, not just hand off a mockup. A Master's in User Experience Design now ties both together with research, testing decisions against how people actually behave instead of assumptions.
+                </p>
+            </div>
+        </div>
+    </section>
+    <section class="exp-section" id="experience">
+        <div class="exp-header reveal-up">
+            <h2>Experience</h2>
+            <p>Where I've applied design, research, and a builder's hands-on instinct.</p>
+        </div>
+        <div class="exp-list">
+            <div class="exp-row reveal-stagger">
+                <div class="exp-when"><span class="exp-year">2025 &mdash; Now</span></div>
+                <div class="exp-what">
+                    <h3>Master of Information <span class="exp-at">· University of Toronto</span></h3>
+                    <p>Deepening research craft, including qualitative interviews, usability testing, and design systems, on top of a Digital Enterprise Management foundation.</p>
+                </div>
+            </div>
+            <a href="project_benq.html" class="exp-row reveal-stagger">
+                <div class="exp-when"><span class="exp-year">Jun &mdash; Sept 2023</span></div>
+                <div class="exp-what">
+                    <h3>UX Designer <span class="exp-at">· Internship, BenQ Corporation</span></h3>
+                    <p>Ran mixed-methods research, including surveys and interviews, to evaluate the newly launched Zowie e-sports booking platform, then translated findings into high-fidelity wireframes that lifted product sales by 15%.</p>
+                    <span class="exp-link-hint">See the work <span class="arrow">&rarr;</span></span>
+                </div>
+            </a>
+        </div>
+    </section>
+    <section class="work-section" id="work">
+        <div class="work-header reveal-up">
+            <div class="work-header-top">
+                <h2>Selected Work</h2>
+                <p>Different strengths for different roles: product thinking, UI craft, research, evaluation, and the systems underneath them. Filter by what you're hiring for.</p>
+            </div>
+            <div class="work-filters" role="tablist" aria-label="Filter work by category">
+                <button class="filter-chip is-active" data-filter="all">All Work</button>
+                <button class="filter-chip" data-filter="product-design">Product Design</button>
+                <button class="filter-chip" data-filter="ui-design">UI Design</button>
+                <button class="filter-chip" data-filter="research">Research</button>
+                <button class="filter-chip" data-filter="usability-testing">Usability Testing</button>
+                <button class="filter-chip" data-filter="redesign">Redesign</button>
+                <button class="filter-chip" data-filter="evaluation">Evaluation</button>
+                <button class="filter-chip" data-filter="design-system">Design System</button>
+            </div>
+        </div>
+
+        <div class="proj-grid" id="projGrid">
+
+            <!-- Project 1 -->
+            <a href="project_mapmoment.html" class="proj-card reveal-stagger" data-cat="ui-design design-system usability-testing product-design research">
+                <div class="proj-figure">
+                    <img src="assets/mapmoment_cover.png" alt="Map & Moment cover" loading="lazy" class="cover-align-left">
+                    <span class="proj-num">01</span>
+                </div>
+                <div class="proj-info">
+                    <span class="proj-kicker">Team &rarr; Solo &middot; Hi-Fi &amp; Design System</span>
+                    <h3>Map &amp; Moment</h3>
+                    <p>A team's mid-fi prototype, taken solo into a high-fidelity redesign anchored by a full design system: tokens, type scale, color aliases, and components.</p>
+                    <div class="proj-foot">
+                        <span class="proj-tags"><span>Design System</span><span>Hi-Fi UI</span><span>Usability Testing</span></span>
+                        <span class="proj-go" aria-hidden="true">→</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Project 2 -->
+            <a href="project_foodiematch.html" class="proj-card reveal-stagger" data-cat="product-design ui-design research">
+                <div class="proj-figure">
+                    <img src="assets/cover1.png" alt="Foodie Match cover" loading="lazy">
+                    <span class="proj-num">02</span>
+                </div>
+                <div class="proj-info">
+                    <span class="proj-kicker">End-to-End Design · Research → Hi-Fi</span>
+                    <h3>Foodie Match</h3>
+                    <p>A full design-thinking cycle, from 8 interviews and journey maps to usability testing, to fix decision fatigue when choosing where to eat.</p>
+                    <div class="proj-foot">
+                        <span class="proj-tags"><span>UX Research</span><span>Prototyping</span><span>Usability Testing</span></span>
+                        <span class="proj-go" aria-hidden="true">→</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Project 3 -->
+            <a href="project_booking.html" class="proj-card reveal-stagger" data-cat="redesign evaluation usability-testing">
+                <div class="proj-figure">
+                    <img src="assets/redesign_cover.png" alt="UofT Study Room Booking Portal Redesign cover" loading="lazy">
+                    <span class="proj-num">03</span>
+                </div>
+                <div class="proj-info">
+                    <span class="proj-kicker">Evaluation &amp; Redesign · A/B Testing</span>
+                    <h3>UofT Study Room Booking Portal Redesign</h3>
+                    <p>Fixing a real, in-use system: heuristic evaluation and A/B testing with 16 users cut task time by 53.8 seconds.</p>
+                    <div class="proj-foot">
+                        <span class="proj-tags"><span>Heuristic Eval</span><span>A/B Testing</span><span>Redesign</span></span>
+                        <span class="proj-go" aria-hidden="true">→</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Project 4 -->
+            <a href="project_tripcom.html" class="proj-card reveal-stagger" data-cat="usability-testing evaluation">
+                <div class="proj-figure">
+                    <img src="assets/tripcom_cover.png" alt="Evaluating Trip.com cover" loading="lazy">
+                    <span class="proj-num">04</span>
+                </div>
+                <div class="proj-info">
+                    <span class="proj-kicker">Team of 5 · UX Research &amp; Usability Testing</span>
+                    <h3>Evaluating Trip.com</h3>
+                    <p>A six-participant usability study on Trip.com's cluttered booking flow, moderated solo and coded into a severity-ranked set of findings for the team's final evaluation report.</p>
+                    <div class="proj-foot">
+                        <span class="proj-tags"><span>Usability Testing</span><span>UX Research</span><span>Thematic Analysis</span></span>
+                        <span class="proj-go" aria-hidden="true">→</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Project 5 -->
+            <a href="project_shopping.html" class="proj-card reveal-stagger" data-cat="research">
+                <div class="proj-figure">
+                    <img src="assets/shopping_cover.png" alt="Understanding Online Shopping Behaviour cover" loading="lazy">
+                    <span class="proj-num">05</span>
+                </div>
+                <div class="proj-info">
+                    <span class="proj-kicker">Exploratory Research &middot; Semi-Structured Interviews</span>
+                    <h3>Understanding Online Shopping Behaviour</h3>
+                    <p>Eight semi-structured interviews on why people buy clothes they don't need. I helped design the study, moderated two sessions, and built the shared codebook.</p>
+                    <div class="proj-foot">
+                        <span class="proj-tags"><span>UX Research</span><span>Interviewing</span><span>Thematic Analysis</span></span>
+                        <span class="proj-go" aria-hidden="true">→</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Project 6 -->
+            <a href="project_snapbuy.html" class="proj-card reveal-stagger" data-cat="ui-design">
+                <div class="proj-figure">
+                    <img src="assets/snapbuy_cover.png" alt="SnapBuy cover" loading="lazy">
+                    <span class="proj-num">06</span>
+                </div>
+                <div class="proj-info">
+                    <span class="proj-kicker">Solo Project · Interaction &amp; UI</span>
+                    <h3>SnapBuy</h3>
+                    <p>A solo end-to-end project, from problem framing to UI craft, designing a distraction-free mobile shopping flow.</p>
+                    <div class="proj-foot">
+                        <span class="proj-tags"><span>UI Design</span><span>Interaction</span><span>Visual Craft</span></span>
+                        <span class="proj-go" aria-hidden="true">→</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Placeholder 7 -->
+            <div class="proj-card proj-card-soon reveal-stagger" data-cat="placeholder" aria-hidden="true">
+                <div class="proj-figure proj-figure-soon"><span class="proj-num">07</span></div>
+                <div class="proj-info">
+                    <span class="proj-kicker">Coming soon</span>
+                    <h3>Next case study</h3>
+                    <p>A new project is in the works. Check back soon.</p>
+                    <div class="proj-foot"><span class="proj-tags"><span>In progress</span></span></div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="skills-section" id="skills">
+        <div class="skills-inner">
+            <div class="skills-head reveal-up">
+                <span class="section-tag">Skills</span>
+                <h2>Tools &amp;<br>craft</h2>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-pill reveal-stagger">Figma</div>
+                <div class="skill-pill reveal-stagger">Adobe Suite</div>
+                <div class="skill-pill reveal-stagger">Prototyping</div>
+                <div class="skill-pill reveal-stagger">Wireframing</div>
+                <div class="skill-pill reveal-stagger">Balsamiq</div>
+                <div class="skill-pill reveal-stagger">Canva</div>
+                <div class="skill-pill reveal-stagger">Usability Testing</div>
+                <div class="skill-pill reveal-stagger">A/B Testing</div>
+                <div class="skill-pill reveal-stagger">User Interviews</div>
+                <div class="skill-pill reveal-stagger">Survey Design</div>
+                <div class="skill-pill reveal-stagger">Card Sorting</div>
+                <div class="skill-pill reveal-stagger">Heuristic Evaluation</div>
+                <div class="skill-pill reveal-stagger">Maze</div>
+                <div class="skill-pill reveal-stagger">UserTesting</div>
+                <div class="skill-pill reveal-stagger">Miro</div>
+                <div class="skill-pill reveal-stagger">Design Systems</div>
+                <div class="skill-pill reveal-stagger">HTML / CSS</div>
+                <div class="skill-pill reveal-stagger">React</div>
+                <div class="skill-pill reveal-stagger">Webflow</div>
+                <div class="skill-pill reveal-stagger">WordPress</div>
+                <div class="skill-pill reveal-stagger">Unity VR</div>
+                <div class="skill-pill reveal-stagger">Tableau</div>
+                <div class="skill-pill reveal-stagger">Google Analytics</div>
+                <div class="skill-pill reveal-stagger">Claude Code</div>
+                <div class="skill-pill reveal-stagger">Cursor</div>
+                <div class="skill-pill reveal-stagger">Git &amp; GitHub</div>
+                <div class="skill-pill reveal-stagger">Vercel</div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="site-footer" id="contact">
+        <div class="footer-inner">
+            <div class="footer-left">
+                <div class="footer-name">Kyle Ma</div>
+                <p class="footer-tagline">UX &amp; Product Designer with a builder's and a business mind.</p>
+            </div>
+            <div class="footer-links">
+                <a href="about.html" class="hover-target">About</a>
+                <a href="resume.html" class="hover-target">Resume</a>
+                <a href="https://www.linkedin.com/in/kyle-ma-a54522225/" target="_blank" class="hover-target">LinkedIn</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2025 Kyle Ma.
+        </div>
+    </footer>
+
+    <div class="lightbox" id="lightbox">
+        <img id="lightbox-img" src="" alt="">
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

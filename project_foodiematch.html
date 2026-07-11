@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script>
+        (function(){
+            var d = document.documentElement;
+            var stored = null;
+            try { stored = localStorage.getItem('theme'); } catch (e) {}
+            d.setAttribute('data-theme', stored || d.getAttribute('data-default-theme') || 'light');
+        })();
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#f2f2f7">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "vybtpd5e1t");
+    </script>
+    <title>Foodie Match | Kyle Ma</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Make process-doc images obviously zoomable */
+        .doc-figure img { cursor: zoom-in; }
+
+        /* Testing findings — redesigned: no boxed cards, editorial list */
+        .finding-list { display: block; margin: 40px 0 8px; }
+        .finding-card {
+            display: block;
+            background: none;
+            border: none;
+            border-top: 1px solid var(--line, rgba(24,22,15,0.14));
+            border-radius: 0;
+            box-shadow: none;
+            padding: clamp(28px, 4vh, 44px) 0;
+        }
+        .finding-card:last-child { border-bottom: 1px solid var(--line, rgba(24,22,15,0.14)); }
+        .finding-index { display: none; }
+        .finding-body { display: block; }
+        .finding-head {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 18px;
+            flex-wrap: wrap;
+            margin-bottom: 16px;
+        }
+        .finding-head h3 {
+            position: relative;
+            padding-left: 20px;
+            margin: 0;
+        }
+        .finding-head h3::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0.18em;
+            bottom: 0.18em;
+            width: 4px;
+            border-radius: 2px;
+            background: var(--accent, #d8431f);
+        }
+        .finding-flag {
+            background: none;
+            padding: 0;
+            color: var(--accent-deep, #b3340f);
+        }
+        .finding-quote {
+            border-left: 2px solid var(--line, rgba(24,22,15,0.14));
+            padding: 4px 0 4px 18px;
+            margin: 0;
+            background: none;
+        }
+        .finding-quote p { margin: 0 0 8px; }
+
+        /* Findings table — issue / severity / impact */
+        .findings-table-wrap { margin: 40px 0 8px; overflow-x: auto; }
+        .findings-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.97rem;
+        }
+        .findings-table thead th {
+            text-align: left;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+            font-size: 0.72rem;
+            color: var(--accent-deep, #b3340f);
+            padding: 0 16px 12px 0;
+            border-bottom: 1.5px solid var(--line, rgba(24,22,15,0.14));
+        }
+        .findings-table tbody td {
+            padding: 18px 16px 18px 0;
+            border-bottom: 1px solid var(--line, rgba(24,22,15,0.14));
+            vertical-align: top;
+        }
+        .findings-table tbody tr:last-child td { border-bottom: none; }
+        .findings-table .col-issue { font-weight: 600; width: 30%; }
+        .findings-table .col-severity { width: 130px; white-space: nowrap; }
+        .findings-table .col-impact { color: var(--ink-soft, rgba(24,22,15,0.74)); }
+        .sev {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            font-weight: 600;
+            font-size: 0.86rem;
+        }
+        .sev::before {
+            content: "";
+            width: 9px; height: 9px;
+            border-radius: 50%;
+            background: currentColor;
+        }
+        .sev-high { color: #c2410c; }
+        .sev-medium { color: #b58105; }
+        .sev-low { color: #4b7a3f; }
+        @media (max-width: 640px) {
+            .findings-table .col-issue { width: auto; }
+            .findings-table thead th:nth-child(3),
+            .findings-table tbody td:nth-child(3) { min-width: 200px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-aura" aria-hidden="true"></div>
+    <div class="noise-overlay"></div>
+
+    <nav>
+        <a href="index.html" class="logo hover-target">Kyle Ma</a>
+        <a href="index.html" class="back-link hover-target">← Back to all work</a>
+        <button class="theme-toggle hover-target" id="themeToggle" type="button" aria-label="Toggle light and dark mode">
+            <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+            <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <div class="scroll-progress-container">
+            <div class="scroll-progress-bar" id="progressBar"></div>
+        </div>
+    </nav>
+
+    <div class="case-study-container">
+        
+        <div class="project-meta-header">
+            <span class="breadcrumb">End-to-End Design &#183; Research &rarr; Hi-Fi</span>
+            <h1 class="project-title">Foodie Match: Restaurant Discovery & Booking App</h1>
+            <p class="summary">
+                One of my most complete end-to-end projects. It runs from secondary and primary research, through synthesis, sketches, and a polished prototype, all the way to task-based usability testing with real users. This is where I show the full arc: identify the problem, prove it, design for it, and let testing reshape it.
+            </p>
+
+            <div class="meta-grid">
+                <div class="meta-item">
+                    <span>What this shows</span>
+                    <strong>The full UX cycle: secondary + primary research, synthesis, UI design, usability testing</strong>
+                </div>
+                <div class="meta-item">
+                    <span>My role on the team</span>
+                    <strong>Group of 4 &middot; I led research synthesis &amp; prototyping</strong>
+                </div>
+                <div class="meta-item">
+                    <span>Timeline</span>
+                    <strong>1 Academic Term · 2025</strong>
+                </div>
+            </div>
+
+            <div class="tldr-card">
+                <div class="tldr-header">
+                    <h2 class="at-a-glance-title">In this project, I...</h2>
+                </div>
+
+                <ul class="tldr-list">
+                    <li>Ran <strong>two parallel research tracks</strong> to prove the problem before designing: a competitive analysis of existing platforms and <strong>8 semi-structured interviews</strong> (TCPS 2 ethics)</li>
+                    <li>Synthesized findings into a journey map, a task flow, and a persona, then converged them into three design pillars</li>
+                    <li>Moved from <strong>hand sketches to a mid-fidelity prototype</strong>, then after testing <strong>refined and polished it into the final high-fidelity design on my own</strong>, owning the UI craft end to end</li>
+                    <li>Ran <strong>task-based usability testing</strong> across 4 sessions, <strong>moderating 2 and taking notes on 2</strong>, combining think-aloud, behavioural observation, and a short exit interview, then analyzed the transcripts to pull out what to fix</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="content-wrapper">
+            <h2>The full arc, at a glance</h2>
+            <p>
+                This is the one project where I owned every stage of the design process. Before walking through it, here's the shape of the whole thing. Each stage fed directly into the next.
+            </p>
+        </div>
+
+        <div class="process-flow">
+            <svg viewBox="0 0 1000 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The five-stage design process: Research, Synthesis, Design, Testing, Iterate" preserveAspectRatio="xMidYMid meet">
+                <path d="M 100 110 L 280 110 L 460 110 L 640 110 L 820 110 L 900 110"
+                      fill="none" stroke="var(--accent)" stroke-width="2" stroke-dasharray="2 6" stroke-linecap="round" opacity="0.55"/>
+                <!-- Node 1 -->
+                <g class="pf-node">
+                    <circle cx="100" cy="110" r="34" fill="var(--card)" stroke="var(--accent)" stroke-width="2"/>
+                    <text x="100" y="118" text-anchor="middle" class="pf-num">01</text>
+                    <text x="100" y="58" text-anchor="middle" class="pf-title">Research</text>
+                    <text x="100" y="168" text-anchor="middle" class="pf-desc">Competitive scan</text>
+                    <text x="100" y="184" text-anchor="middle" class="pf-desc">+ 8 interviews</text>
+                </g>
+                <!-- Node 2 -->
+                <g class="pf-node">
+                    <circle cx="280" cy="110" r="34" fill="var(--card)" stroke="var(--ink)" stroke-width="2"/>
+                    <text x="280" y="118" text-anchor="middle" class="pf-num pf-num-ink">02</text>
+                    <text x="280" y="168" text-anchor="middle" class="pf-title">Synthesis</text>
+                    <text x="280" y="58" text-anchor="middle" class="pf-desc">Journey map,</text>
+                    <text x="280" y="42" text-anchor="middle" class="pf-desc">task flow, persona</text>
+                </g>
+                <!-- Node 3 -->
+                <g class="pf-node">
+                    <circle cx="460" cy="110" r="34" fill="var(--card)" stroke="var(--ink)" stroke-width="2"/>
+                    <text x="460" y="118" text-anchor="middle" class="pf-num pf-num-ink">03</text>
+                    <text x="460" y="58" text-anchor="middle" class="pf-title">Design</text>
+                    <text x="460" y="168" text-anchor="middle" class="pf-desc">Sketches to</text>
+                    <text x="460" y="184" text-anchor="middle" class="pf-desc">hi-fi prototype</text>
+                </g>
+                <!-- Node 4 -->
+                <g class="pf-node">
+                    <circle cx="640" cy="110" r="34" fill="var(--card)" stroke="var(--ink)" stroke-width="2"/>
+                    <text x="640" y="118" text-anchor="middle" class="pf-num pf-num-ink">04</text>
+                    <text x="640" y="168" text-anchor="middle" class="pf-title">Testing</text>
+                    <text x="640" y="58" text-anchor="middle" class="pf-desc">Task-based study,</text>
+                    <text x="640" y="42" text-anchor="middle" class="pf-desc">8 participants</text>
+                </g>
+                <!-- Node 5 -->
+                <g class="pf-node">
+                    <circle cx="820" cy="110" r="34" fill="var(--accent)" stroke="var(--accent)" stroke-width="2"/>
+                    <text x="820" y="118" text-anchor="middle" class="pf-num pf-num-on">05</text>
+                    <text x="820" y="58" text-anchor="middle" class="pf-title">Iterate</text>
+                    <text x="820" y="168" text-anchor="middle" class="pf-desc">Findings drive</text>
+                    <text x="820" y="184" text-anchor="middle" class="pf-desc">targeted fixes</text>
+                </g>
+            </svg>
+        </div>
+
+        <div class="content-wrapper">
+            <h2>The problem, and why I didn't take it on faith</h2>
+            <p>
+                Tourists are overwhelmed when choosing where to eat in an unfamiliar city. That was our starting hunch. But a hunch isn't a brief, so before designing anything, I helped run two research tracks in parallel to find out whether the problem was real and where exactly it lived.
+            </p>
+            <p>
+                <strong>Secondary research</strong> came first: a competitive scan of how people actually piece together a dining decision today. Each major tool solves only one slice. Google Maps owns navigation and breadth but its reviews are inconsistent; Yelp leans on reviews but isn't tied to reliable booking; OpenTable nails reservations but only for partner restaurants and offers little discovery; TikTok and Instagram supply vibe and trends but no practical details like hours or availability. Nobody covers discovery, trust, and booking in one trustworthy flow, and that gap is the opening the project aimed at.
+            </p>
+            <p>
+                <strong>Primary research</strong> tested that gap against real behavior: <strong>eight semi-structured interviews</strong> with travellers aged 23&ndash;30, run under TCPS 2 ethics with informed consent and anonymized data. I conducted two of the eight myself and helped code all eight together with the team.
+            </p>
+        </div>
+
+        <div class="content-wrapper">
+            <h2>What the interviews actually said</h2>
+            <p>
+                Coding the eight transcripts surfaced recurring patterns. Three of them mattered most for design. Each one is a direct pain point, in participants' own words:
+            </p>
+        </div>
+
+        <div class="quote-grid">
+            <div class="quote-card hover-target">
+                <div class="quote-icon">"</div>
+                <p class="quote-text">I spend so much time comparing reviews that by the time I decide, I'm not even hungry anymore.</p>
+                <span class="quote-author"><strong>Decision fatigue</strong></span>
+            </div>
+            <div class="quote-card hover-target">
+                <div class="quote-icon">"</div>
+                <p class="quote-text">Sometimes they use fake reviews to increase the rating. You can't fully rely on them.</p>
+                <span class="quote-author"><strong>Distrust of reviews</strong></span>
+            </div>
+            <div class="quote-card hover-target">
+                <div class="quote-icon">"</div>
+                <p class="quote-text">Honestly I trust where my friends actually ate way more than a random five-star rating.</p>
+                <span class="quote-author"><strong>Wants social proof</strong></span>
+            </div>
+        </div>
+
+        <div class="content-wrapper">
+            <h2>Turning research into direction</h2>
+            <p>
+               To bridge research and design, I helped translate the interviews into three artefacts, each one doing a specific job, not produced for show.
+            </p>
+        </div>
+
+        <div class="doc-figure">
+            <div class="doc-figure-label">
+                <span class="doc-kind">Journey map</span>
+                <span class="doc-title">Where the experience actually breaks</span>
+            </div>
+            <img src="assets/journey_explore.png" alt="Journey map for a user exploring good food">
+            <p class="doc-caption">
+                I mapped out the core journey to pinpoint the specific points where the experience was falling short. This helped us identify the <strong>pain points</strong> and challenges users were facing, and allowed us to turn them into value.
+            </p>
+        </div>
+
+        <div class="doc-figure">
+            <div class="doc-figure-label">
+                <span class="doc-kind">Task flow</span>
+                <span class="doc-title">From insight to interaction structure</span>
+            </div>
+            <img src="assets/task_flow.png" alt="User task flow for finding and booking a restaurant">
+            <p class="doc-caption">
+                The task flow <strong>outlines the core design concept</strong>: it begins by displaying recommended content item by item, enters a “Like/Dislike” loop, and ultimately branches into “Save,” “Continue Browsing,” or “Book.” Before designing any user interface, the task flow helps us ensure that subsequent designs remain rooted in the original design concept.
+            </p>
+        </div>
+
+        <div class="doc-figure">
+            <div class="doc-figure-label">
+                <span class="doc-kind">Primary Persona</span>
+                <span class="doc-title">Who we were designing for</span>
+            </div>
+            <img src="assets/persona_kevin.png" alt="Kevin persona, the overwhelmed planner">
+            <p class="doc-caption">
+                The persona <strong>keeps the research anchored to a real person</strong>. Kevin is the overwhelmed planner, built around the sharpest tension we found: decision fatigue. He over-researches, second-guesses reviews, and needs structure, verified information, and efficiency to feel confident enough to book. Throughout the design, Kevin acts as a constant check that every decision solves a real user problem.
+            </p>
+        </div>
+
+        <div class="content-wrapper">
+            <h2>From sketches to a polished prototype</h2>
+            <p>
+                With direction set, I moved into UI. I started on paper with fast, throwaway sketches to test layouts and flow before committing pixels. Each of us sketched independently, then we <strong>compared our sketches side by side</strong> and combined the strongest ideas into the initial design the team committed to. Sketching first kept that decision cheap, since we were debating layouts rather than defending finished screens.
+            </p>
+        </div>
+
+        <div class="doc-figure">
+            <div class="doc-figure-label">
+                <span class="doc-kind">Early sketches</span>
+                <span class="doc-title">Thinking on paper first</span>
+            </div>
+            <img src="assets/sketches.png" alt="Early hand-drawn UI sketches of the app screens">
+            <p class="doc-caption">
+                My sketches explored the preference prompt, recommendation card, detail page, and booking flow. This resolved the structure before any visual design, and gave the team concrete options to compare and merge.
+            </p>
+        </div>
+
+        <div class="content-wrapper">
+            <p>
+                From that agreed direction, I built a <strong>mid-fidelity prototype</strong> covering the full journey from preference prompt to booking confirmation. This was the version I took into usability testing: complete enough to test the flow, but not yet polished, so feedback could focus on whether the experience actually worked.
+            </p>
+        </div>
+
+        <div class="content-wrapper">
+            <h2>Validation: testing the prototype with real users</h2>
+            <p>
+                Our team ran a <strong>task-based usability study</strong> on the mid-fidelity prototype. Participants worked through a realistic scenario: plan dinner for three, from setting preferences to confirming a booking. I was hands-on for <strong>four of these sessions, moderating two and taking notes on two</strong>, which let me experience the study from both sides of the table.
+            </p>
+            <p>
+                Each session combined three lenses on the same moment. A <strong>think-aloud protocol</strong> surfaced participants' reasoning as they worked. <strong>Structured behavioural observation</strong> by a teammate recorded what actually happened: whether they completed the step, whether their words revealed a misread of the design, and whether they reported confusion. A <strong>short exit interview</strong> then captured their reflections afterward. I went back through the session transcripts to analyze patterns across participants and pull out the insights that mattered.
+            </p>
+        </div>
+
+        <div class="doc-figure">
+            <div class="doc-figure-label">
+                <span class="doc-kind">Session notes</span>
+                <span class="doc-title">Capturing what happened, moment by moment</span>
+            </div>
+            <img src="assets/testing_notes.png" alt="Usability testing notes recording participant behaviour and feedback">
+            <p class="doc-caption">
+                A sample of the notes I took during sessions. Each entry tracks what the participant did, where they hesitated, and what they said out loud, which is the raw material I later coded into the findings below.
+            </p>
+        </div>
+
+        <div class="findings-table-wrap">
+            <table class="findings-table">
+                <thead>
+                    <tr>
+                        <th class="col-issue">Issue</th>
+                        <th class="col-severity">Severity</th>
+                        <th class="col-impact">Impact on the user</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="col-issue">Not enough to actually decide on</td>
+                        <td class="col-severity"><span class="sev sev-high">High</span></td>
+                        <td class="col-impact">The swipe flow was built to fight decision fatigue, but the early screens gave people so little to go on that they still couldn't commit. The fatigue we designed against was still there, just moved one step later.</td>
+                    </tr>
+                    <tr>
+                        <td class="col-issue">Tapping "Like" gave no feedback</td>
+                        <td class="col-severity"><span class="sev sev-high">High</span></td>
+                        <td class="col-impact">After tapping the heart, participants weren't sure anything had happened or where the place went. The missing response quietly reintroduced the very friction the swipe flow was meant to remove.</td>
+                    </tr>
+                    <tr>
+                        <td class="col-issue">No social signal to lean on</td>
+                        <td class="col-severity"><span class="sev sev-medium">Medium</span></td>
+                        <td class="col-impact">Several participants said they trust where friends have actually eaten over anonymous ratings, but the app offered no way to see that. Without any social proof, the recommendation felt like it came from nowhere.</td>
+                    </tr>
+                    <tr>
+                        <td class="col-issue">Saved restaurants were hard to find again</td>
+                        <td class="col-severity"><span class="sev sev-low">Low</span></td>
+                        <td class="col-impact">Once a place was liked, participants weren't sure where it had gone or how to return to it, adding a small but repeated moment of doubt to an otherwise quick flow.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="content-wrapper">
+            <h2>What testing changed</h2>
+            <p>
+                Each finding pointed to a specific fix. Working on my own after the sessions, I took the feedback and <strong>refined the UX, then polished the visual design</strong>, turning the tested mid-fidelity screens into a final high-fidelity prototype. Below, the three pillars are shown as they evolved, the polished version next to the mid-fidelity one it replaced.
+            </p>
+        </div>
+
+        <!-- FEATURE 1: Enough to decide on -->
+        <div class="feature-block">
+            <div class="feature-head">
+                <span class="feature-index"><span class="feature-num">01</span> The swipe decision flow</span>
+                <span class="feature-insight-tag">Answers: Decision fatigue</span>
+                <h2>Giving each choice enough to decide on</h2>
+                <p>
+                    Our most profound insight was this: even though I had tried to design decision fatigue away, the fatigue still persisted. The swipe flow was meant to fix it by putting one restaurant in front of you at a time and making "yes / no" feel light, and the mechanic itself worked in testing. But the early screens carried so little that people still couldn't actually commit. The fatigue hadn't gone away; it had just moved one step later. So instead of stripping the choice down further, I went the other way and <strong>gave each card the decisional factors a real choice needs</strong>: hours, location, a rating breakdown, tags, and translation support. Each restaurant now presents enough to judge on its own, so the lightness of the swipe finally pays off in a decision people can stand behind.
+                </p>
+            </div>
+            <div class="evolution-row">
+                <div class="evolution-stage hover-target">
+                    <div class="evolution-stage-label"><span class="dot"></span> Mid-fidelity</div>
+                    <img src="assets/lofi_detail.png" alt="Mid-fidelity wireframe of the restaurant detail page">
+                    <p class="stage-caption">Tested version: too little to go on, so users still couldn't commit to a choice.</p>
+                </div>
+                <div class="evolution-arrow" aria-hidden="true">&rarr;</div>
+                <div class="evolution-stage is-hifi hover-target">
+                    <div class="evolution-stage-label"><span class="dot"></span> Polished</div>
+                    <img src="assets/pivot_detail.png" alt="Final restaurant detail page with hours, location, ratings, tags and translation">
+                    <p class="stage-caption">Final design: hours, location, rating breakdown, tags, and translation, enough to actually decide.</p>
+                </div>
+            </div>
+            <div class="feature-outcome">
+                <span class="outcome-mark">&rarr;</span>
+                <p>The lesson was clear: solving decision fatigue isn't about showing less, it's about showing the <strong>right things to decide with.</strong> A clean screen that leaves people guessing only pushes the fatigue downstream.</p>
+            </div>
+        </div>
+
+        <!-- FEATURE 2: Feedback after Like -->
+        <div class="feature-block">
+            <div class="feature-head">
+                <span class="feature-index"><span class="feature-num">02</span> Clear feedback after a choice</span>
+                <span class="feature-insight-tag">Answers: Tapping "Like" gave no feedback</span>
+                <h2>Confirming the tap actually did something</h2>
+                <p>
+                    A small interaction caused outsized confusion. After tapping the heart to "Like" a restaurant, participants weren't sure anything had happened, or where the saved place went. That uncertainty quietly reintroduced the very fatigue the swipe flow was meant to remove. The fix was a lightweight confirmation overlay, an immediate "Added! Saved to your list", so every tap gets a visible, instant response.
+                </p>
+            </div>
+            <div class="evolution-row">
+                <div class="evolution-stage hover-target">
+                    <div class="evolution-stage-label"><span class="dot"></span> Mid-fidelity</div>
+                    <img src="assets/lofi_added.png" alt="Mid-fidelity wireframe of the like interaction with no confirmation">
+                    <p class="stage-caption">Tested version: tapping "Like" gave no feedback, leaving users unsure it registered.</p>
+                </div>
+                <div class="evolution-arrow" aria-hidden="true">&rarr;</div>
+                <div class="evolution-stage is-hifi hover-target">
+                    <div class="evolution-stage-label"><span class="dot"></span> Polished</div>
+                    <img src="assets/pivot_added.png" alt="Final design with an Added confirmation overlay after liking a restaurant">
+                    <p class="stage-caption">Final design: an immediate confirmation overlay makes every tap feel registered.</p>
+                </div>
+            </div>
+            <div class="feature-outcome">
+                <span class="outcome-mark">&rarr;</span>
+                <p>I assumed people understood what tapping "Like" did; testing showed they didn't. <strong>The smallest missing feedback can undo a feature's whole purpose.</strong></p>
+            </div>
+        </div>
+
+        <!-- FEATURE 3: Social proof -->
+        <div class="feature-block">
+            <div class="feature-head">
+                <span class="feature-index"><span class="feature-num">03</span> Borrowing trust from friends</span>
+                <span class="feature-insight-tag">Answers: No social signal to lean on</span>
+                <h2>Bringing friends into the decision</h2>
+                <p>
+                    A pattern ran through the interviews: people trust where their friends have actually eaten far more than an anonymous five-star rating. The original flow had no way to surface that, so a recommendation could feel like it came from nowhere. To answer it, I <strong>added a light social layer</strong> on the recommendation and detail screens, showing which friends had saved or been to a place, so a choice carries a familiar signal instead of a faceless score. It reuses trust people already have rather than asking them to build it from raw ratings.
+                </p>
+            </div>
+            <div class="evolution-row">
+                <div class="evolution-stage hover-target">
+                    <div class="evolution-stage-label"><span class="dot"></span> Mid-fidelity</div>
+                    <img src="assets/lofi_social.png" alt="Mid-fidelity wireframe with only anonymous ratings and no social signal">
+                    <p class="stage-caption">Tested version: only anonymous ratings, with no sign of who the user actually trusts.</p>
+                </div>
+                <div class="evolution-arrow" aria-hidden="true">&rarr;</div>
+                <div class="evolution-stage is-hifi hover-target">
+                    <div class="evolution-stage-label"><span class="dot"></span> Polished</div>
+                    <img src="assets/pivot_social.png" alt="Final design showing which friends saved or visited a restaurant">
+                    <p class="stage-caption">Final design: friends who saved or visited a place surface right on the card.</p>
+                </div>
+            </div>
+            <div class="feature-outcome">
+                <span class="outcome-mark">&rarr;</span>
+                <p>Ratings answer "is this good?"; friends answer "is this good <strong>for someone like me?</strong>" Borrowing existing trust did more for confidence than any number could.</p>
+            </div>
+        </div>
+
+        <div class="content-wrapper"> 
+            <h2>Impact &amp; what I took away</h2>
+            <p>
+                This is the project where I owned the entire arc, and the value isn't any single screen. It's that every decision can be traced back to evidence. The problem was proven through competitive analysis and eight interviews, translated into a journey map and a task flow, designed from sketches into a tested prototype, and then refined and polished by what real users did in testing. Nothing in the final design is there because I guessed.
+            </p>
+            <p>
+                The sharpest lesson came from testing contradicting me. I'd assumed one restaurant at a time would relieve decision fatigue for everyone, but watching participants reach for a comparison view showed the model helped some and blocked others. I'd assumed a tapped "Like" was self-evidently understood, and it wasn't. Hearing people reason aloud turned my assumptions into specific, defensible changes.
+            </p>
+            <p>
+                That's the muscle I'd bring to a product team: I can carry a problem from raw research all the way to a tested, polished interface, and I trust evidence over my own first instinct at every step in between.
+            </p>
+        </div>
+
+        <div class="footer-nav">
+            <a href="index.html#work" class="next-project next-only hover-target">
+                <span>Back to</span>
+                <strong>All Work &rarr;</strong>
+            </a>
+        </div>
+
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-left">
+                <div class="footer-name">Kyle Ma</div>
+                <p class="footer-tagline">UX &amp; Product Designer with a builder's and a business mind.</p>
+            </div>
+            <div class="footer-links">
+                <a href="index.html#work" class="hover-target">Work</a>
+                <a href="about.html" class="hover-target">About</a>
+                <a href="resume.html" class="hover-target">Resume</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2025 Kyle Ma.
+        </div>
+    </footer>
+
+    <div class="lightbox" id="lightbox">
+        <img id="lightbox-img" alt="">
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        /* Ensure process-doc images (journey map, task flow, sketches) open in the lightbox,
+           independent of the shared script.js selector list. */
+        (function () {
+            var lb = document.getElementById('lightbox');
+            var lbImg = document.getElementById('lightbox-img');
+            if (!lb || !lbImg) return;
+            var imgs = document.querySelectorAll('.doc-figure img');
+            imgs.forEach(function (img) {
+                img.style.cursor = 'zoom-in';
+                img.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    lbImg.src = img.src;
+                    lbImg.alt = img.alt || '';
+                    lb.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+        })();
+    </script>
+
+</body>
+</html>

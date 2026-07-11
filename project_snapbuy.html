@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script>
+        (function(){
+            var d = document.documentElement;
+            var stored = null;
+            try { stored = localStorage.getItem('theme'); } catch (e) {}
+            d.setAttribute('data-theme', stored || d.getAttribute('data-default-theme') || 'light');
+        })();
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#ECEDEF">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "vybtpd5e1t");
+    </script>
+    <title>SnapBuy | Kyle Ma</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="bg-aura" aria-hidden="true"></div>
+    <div class="noise-overlay"></div>
+
+    <nav>
+        <a href="index.html" class="logo hover-target">Kyle Ma</a>
+        <a href="index.html" class="back-link hover-target">← Back to all work</a>
+        <button class="theme-toggle hover-target" id="themeToggle" type="button" aria-label="Toggle light and dark mode">
+            <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+            <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <div class="scroll-progress-container">
+            <div class="scroll-progress-bar" id="progressBar"></div>
+        </div>
+    </nav>
+
+    <div class="case-study-container">
+        
+        <div class="project-meta-header">
+            <span class="breadcrumb">Solo Project &#183; UI &amp; Visual Design</span>
+            <h1 class="project-title">SnapBuy: Designing Calm Into Mobile Shopping</h1>
+            <p class="summary"> 
+                My first-ever UX/UI project &mdash; a solo undergraduate concept arguing that a shopping app can be stripped of clutter and still do its job. It's where I discovered that visual language is a tool for solving problems, not just decorating them.
+            </p>
+
+            <div class="meta-grid">
+                <div class="meta-item">
+                    <span>What this shows</span>
+                    <strong>Visual design point of view, UI craft, minimalist information design</strong>
+                </div>
+                <div class="meta-item">
+                    <span>Context</span>
+                    <strong>Undergraduate elective &middot; Solo &middot; My first UX/UI project</strong>
+                </div>
+                <div class="meta-item">
+                    <span>Timeline</span>
+                    <strong>4 weeks · 2024</strong>
+                </div>
+            </div>
+
+            <div class="tldr-card">
+                <div class="tldr-header">
+                    <h2 class="at-a-glance-title">In this project, I...</h2>
+                </div>
+
+                <ul class="tldr-list">
+                    <li>Took a clear stance against the visual clutter &mdash; ad banners, dense layouts, competing colors &mdash; that overloads most shopping apps</li>
+                    <li>Designed a counter-argument: an interface guided by one principle &mdash; <strong>ultra-minimalism that still functions</strong></li>
+                    <li>Used <strong>spacing, hierarchy, and typography</strong> as the actual tools for cutting noise while keeping the buy flow efficient</li>
+                    <li>Validated the direction with <strong>5</strong> task-based usability sessions and refined the UI on what I saw</li>
+                    <li>Did all of this <strong>before any formal UX training</strong> &mdash; the project that led me to pursue a Master of Information</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="content-wrapper">
+            <h2>Overview</h2>
+            <p>
+                SnapBuy is a mobile shopping concept I designed for an undergraduate elective &mdash; my first real exposure to UX/UI design and to Figma. The brief was open-ended, so I gave myself a single, opinionated constraint: take the visual clutter that defines most shopping apps and design the opposite. One principle drove everything: <strong>ultra-minimalism that still does the job</strong>.
+            </p>
+            <p>
+                This case study isn't organized as a step-by-step process log. It's organized around a visual argument &mdash; the problem I saw, the position I took, and the specific design choices (spacing, hierarchy, typography) I used to back it up.
+            </p>
+        </div>
+
+        <div class="content-wrapper">
+            <h2>Where this project came from</h2>
+            <p>
+                I built SnapBuy before I had any formal UX training, an elective I took as an undergrad, the first time I'd ever opened Figma. I didn't yet have the vocabulary for what I was doing: I couldn't have told you the term for "visual hierarchy" or "progressive disclosure." I just kept noticing that the apps I used felt exhausting, and I wanted to make one that felt calm.
+            </p>
+            <p>
+                I'm keeping it in my portfolio on purpose. Looking back, the instinct in it, that <strong>removing noise is itself a design act</strong>, was the right one before anyone taught it to me. This project is what made me realize design was the thing I wanted to do properly, and it's the direct reason I applied to a <strong>Master of Information</strong> to learn it with rigor. It's the earliest point on a line you can trace through the rest of this portfolio.
+            </p>
+        </div>
+
+        <div class="content-wrapper">
+            <h2>The problem: shopping apps are exhausting</h2>
+            <p class="problem-intro">
+                Looking across popular shopping platforms, the same three things kept getting between the user and the simple act of buying something:
+            </p>
+        </div>
+
+        <div class="problem-grid">
+            <div class="problem-card hover-target">
+                <span class="problem-tag">01</span>
+                <h3>Overwhelming advertising</h3>
+                <p>Aggressive banners, pop-ups, and promotional layers competing for attention with the product itself.</p>
+            </div>
+            <div class="problem-card hover-target">
+                <span class="problem-tag">02</span>
+                <h3>Overly complex interfaces</h3>
+                <p>Dense layouts, too many features at once, and unclear hierarchy that hides what actually matters.</p>
+            </div>
+            <div class="problem-card hover-target">
+                <span class="problem-tag">03</span>
+                <h3>Constant visual distraction</h3>
+                <p>Competing colors, motion, and non-essential UI elements that pull focus away from the decision.</p>
+            </div>
+        </div>
+
+        <div class="content-wrapper">
+            <p class="problem-principle">
+                So I designed around one idea:
+                <span class="principle-highlight">ultra-minimalism, with zero distraction &mdash; but nothing essential removed.</span>
+            </p>
+            <p>
+                The hard part of minimalism isn't taking things away &mdash; it's deciding what has to stay, and making what remains carry more weight. That's a visual-language problem, and I solved it with three tools.
+            </p>
+        </div>
+
+        <!-- PRINCIPLE 1: Spacing -->
+        <div class="screen-section">
+            <div class="screen-copy">
+                <div class="principle-kicker">
+                    <span class="principle-num">01</span>
+                    <span class="principle-name">Spacing</span>
+                </div>
+                <h3 class="principle-title">Letting the product breathe</h3>
+                <p class="principle-body">
+                    Cluttered apps fill every pixel because empty space feels like wasted space. I treated <strong>whitespace as an active element</strong> instead &mdash; generous margins and padding around each product so the eye lands on one thing at a time. The home screen sets that tone immediately: one hero banner instead of a stack of promos, a single row of category pills, and a product grid with room to breathe between cards &mdash; a calm, uncrowded first impression that tells the user this app won't fight them.
+                </p>
+            </div>
+            <div class="screen-visual hover-target">
+                <img src="assets/product_page.png" alt="SnapBuy home screen using generous whitespace and card spacing">
+            </div>
+        </div>
+
+        <!-- PRINCIPLE 2: Hierarchy -->
+        <div class="screen-section stacked">
+            <div class="screen-copy">
+                <div class="principle-kicker">
+                    <span class="principle-num">02</span>
+                    <span class="principle-name">Hierarchy</span>
+                </div>
+                <h3 class="principle-title">Making the next step obvious</h3>
+                <p class="principle-body">
+                    With distraction stripped out, the remaining elements have to guide the user on their own. I leaned on <strong>size, weight, and position</strong> to build a clear order of importance &mdash; product imagery and price dominate, supporting details recede, and the primary action is never in doubt. On the product page, a solid <strong>Buy Now</strong> outranks an outlined <strong>Add to Cart</strong> at a glance. The confirmation sheet that follows repeats the same logic: Check Out is a loud filled pill, Continue Shopping is a quiet underlined link, and the cross-sell beneath it stops at two items instead of an endless carousel. The next step is never in doubt.
+                </p>
+            </div>
+            <div class="screen-visual hover-target">
+                <img src="assets/product_detail.png" alt="SnapBuy product detail screen with a solid Buy Now button outranking an outlined Add to Cart button">
+                <img src="assets/added_to_cart.png" alt="SnapBuy added-to-cart sheet with a filled Check Out button, a quiet Continue Shopping link, and two cross-sell items">
+            </div>
+        </div>
+
+        <!-- PRINCIPLE 3: Typography -->
+        <div class="screen-section stacked">
+            <div class="screen-copy">
+                <div class="principle-kicker">
+                    <span class="principle-num">03</span>
+                    <span class="principle-name">Typography</span>
+                </div>
+                <h3 class="principle-title">Type doing the work of UI</h3>
+                <p class="principle-body">
+                    When you remove decoration, <strong>type becomes the interface</strong>. A consistent type scale &mdash; clear size jumps between heading, label, and body &mdash; carries structure that I'd otherwise have to add with boxes, dividers, and color. The cart, checkout, and confirmation screens rely on it most: the same size jump separates a product name from its price on every screen, bold weight marks the one number that's actually changing &mdash; subtotal, total, order number &mdash; and a single readable column carries the whole flow without a single divider line. Paying feels light instead of laborious.
+                </p>
+            </div>
+            <div class="screen-visual hover-target">
+                <img src="assets/cart.png" alt="SnapBuy cart screen using type weight instead of dividers to separate items, quantity, and subtotal">
+                <img src="assets/checkout.png" alt="SnapBuy checkout screen using a clear type scale to organize address, payment, and order total">
+                <img src="assets/confirmation.png" alt="SnapBuy order confirmation screen carrying the order summary through type alone">
+            </div>
+        </div>
+
+        <div class="content-wrapper">
+            <h2>Pressure-testing the minimalism</h2>
+            <p>
+                A strong visual stance can quietly go too far, so I ran <strong>five</strong> task-based usability sessions to check that "minimal" hadn't become "missing." It mostly held, but two screens needed adjustment, and that tension is the most useful thing the project taught me.
+            </p>
+        </div>
+
+        <div class="screen-section">
+            <div class="screen-copy">
+                <h3 class="principle-title">Where minimal became missing</h3>
+                <p class="principle-body">
+                    Testing showed the product page had stripped away structure people needed: specs weren't grouped, so users couldn't find key details, and the absence of reviews left them unsure at the moment of purchase. I added a categorized, scrollable spec layout and a focused review system &mdash; rating summary up top, filter chips instead of a wall of text &mdash; styled to fit the minimalism rather than break it. The lesson stuck: minimalism isn't the absence of information, it's the absence of <em>noise</em>.
+                </p>
+            </div>
+            <div class="screen-visual hover-target">
+                <img src="assets/reviews.png" alt="SnapBuy reviews screen added after usability testing showed users needed reassurance before purchasing">
+            </div>
+        </div>
+
+        <div class="growth-block">
+            <h2>What I'd do differently now</h2>
+            <p>
+                I've kept this project honest by not polishing away its origins. Two years and a graduate program later, I can see exactly where my instinct was ahead of my craft &mdash; and where it wasn't. That gap is the point: it's the clearest evidence of how far the work has come.
+            </p>
+            <div class="growth-grid">
+                <div class="growth-item">
+                    <h4>I'd test the premise earlier</h4>
+                    <p>Back then I designed the whole minimal concept first and tested at the end. Now I'd validate the "calm vs. cluttered" hypothesis with users up front, before committing to a full visual direction.</p>
+                </div>
+                <div class="growth-item">
+                    <h4>I'd build a real type &amp; spacing system</h4>
+                    <p>I applied spacing and type by eye and intuition. Today I'd define a proper scale and reusable tokens &mdash; the same instinct, but systematized so it holds up and scales.</p>
+                </div>
+                <div class="growth-item">
+                    <h4>I'd ground it in real research</h4>
+                    <p>My "clutter" problem came from observation, not study. Now I'd back the premise with competitive analysis and user research, the way I learned to in my master's work.</p>
+                </div>
+                <div class="growth-item">
+                    <h4>What I'd keep</h4>
+                    <p>The core instinct &mdash; that removing noise is an act of design, not a lack of it. That conviction was right from the start, and it still drives how I work.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-wrapper">
+            <h2>Why this is the first project in my story</h2>
+            <p>
+                SnapBuy is where I found out that design was something I could think in &mdash; that a visual choice could be an argument, not just a decoration. I didn't have the training yet, but I had the instinct, and recognizing that is what pushed me to pursue UX seriously and apply to a Master of Information.
+            </p>
+            <p>
+                Everything else in this portfolio is what happened after I decided to learn this properly. This is where it started.
+            </p>
+        </div>
+
+        <div class="footer-nav">
+            <a href="index.html#work" class="next-project next-only hover-target">
+                <span>Back to</span>
+                <strong>All Work →</strong>
+            </a>
+        </div>
+
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-left">
+                <div class="footer-name">Kyle Ma</div>
+                <p class="footer-tagline">UX &amp; Product Designer with a builder's and a business mind.</p>
+            </div>
+            <div class="footer-links">
+                <a href="index.html#work" class="hover-target">Work</a>
+                <a href="about.html" class="hover-target">About</a>
+                <a href="resume.html" class="hover-target">Resume</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2025 Kyle Ma.
+        </div>
+    </footer>
+
+    <div class="lightbox" id="lightbox">
+        <img id="lightbox-img" alt="">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
